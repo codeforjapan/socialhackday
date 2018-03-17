@@ -10,15 +10,15 @@ var gulp           = require('gulp'), // Gulp
 
 // Unify Main
 gulp.task('sass', function() {
-  return gulp.src('./assets/include/scss/**/*.scss')
-    .pipe(changed('./assets/css/'))
+  return gulp.src('./source/assets/include/scss/**/*.scss')
+    .pipe(changed('./source/assets/css/'))
     .pipe(sass({outputStyle:'expanded'}))
     .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
-    .pipe(gulp.dest('./assets/css/'))
+    .pipe(gulp.dest('./source/assets/css/'))
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./html/assets/include/scss/**/*.scss', ['sass']);
+  gulp.watch('./source/html/assets/include/scss/**/*.scss', ['sass']);
 });
 
 
