@@ -3,8 +3,9 @@
 image: ruby:2.3
 
 variables:
-  S3_BUCKET_STAGING: ""
-  S3_BUCKET_PRODUCTION: ""
+  S3_BUCKET_STAGING: "vision-prodriver/preview"
+  S3_BUCKET_PRODUCTION: "vision-prodriver/website"
+  CF_DISTRIBUTION_ID: "EPA1ZL5B1HOQW"
 
 stages:
   - build
@@ -44,7 +45,7 @@ cache:
 #  - pip install awscli
 #  - aws s3 sync --sse --delete public s3://$S3_BUCKET_PRODUCTION/ --acl public-read
 #  - aws configure set preview.cloudfront true
-#  - aws cloudfront create-invalidation --distribution-id E2SROA59G3YQZ5 --paths '/*'
+#  - aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths '/*'
 #  environment:
 #    name: production
 #  only:
