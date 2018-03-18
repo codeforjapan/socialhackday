@@ -55,3 +55,4 @@ build-iPhoneSimulator/
 .DS_Store
 .sass-cache
 build/
+.tmp
