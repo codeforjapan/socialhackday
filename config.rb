@@ -15,6 +15,8 @@ set :css_dir, "assets/stylesheets"
 set :images_dir, "assets/images"
 set :js_dir, "assets/javascripts"
 
+import_path File.expand_path('public/vendor', app.root)
+
 configure :build do
   activate :external_pipeline,
     name: :gulp,
