@@ -32,3 +32,8 @@ configure :build do
     html.remove_intertag_spaces = true
   end
 end
+
+after_build do |builder|
+  FileUtils.cp_r 'public/.', 'build'
+end
+#activate :livereload
