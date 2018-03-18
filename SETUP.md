@@ -72,8 +72,10 @@ gem install middleman
 % git clone git@hub.georepublic.net:vision-net/website.git
 ...
 % cd website
+% bin/setup
+...
 % npm install
-
+...
 ```
 
 ## setup

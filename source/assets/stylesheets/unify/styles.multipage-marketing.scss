@@ -1,0 +1,153 @@
+//
+// Variables and Mixins
+//
+
+@import "variables.multipage-marketing";
+@import "../../../../public//include/scss/unify";
+
+body {
+	background-color: $g-color-white;
+}
+
+p {
+  color: $g-color-text;
+}
+
+/*------------------------------------
+  Colors
+------------------------------------*/
+.g-color-text {
+  color: $g-color-text;
+}
+
+.g-color-main {
+  color: $g-color-main;
+
+  &-opacity-0_5 {
+  	color: rgba($g-color-main, .5);
+
+  	&--hover:hover {
+  		color: rgba($g-color-main, .5);
+  	}
+  }
+}
+
+.g-color-dark {
+	color: $g-color-dark;
+
+	&-light-v1 {
+  	color: $g-color-dark-light-v1;
+  }
+}
+
+/*------------------------------------
+  Background Colors
+------------------------------------*/
+.g-bg-main {
+  background-color: $g-color-main !important;
+
+	&-opacity-0_5 {
+    background-color: rgba($g-color-main, .5);
+  }
+
+  &-opacity-0_8--after::after {
+  	background-color: rgba($g-color-main, .8);
+  }
+
+  &-opacity-0_9--after::after {
+  	background-color: rgba($g-color-main, .9);
+  }
+
+  &--hover:hover {
+    background-color: $g-color-main !important;
+  }
+
+  &--focus:focus {
+    background-color: $g-color-main !important;
+  }
+}
+
+.active.g-bg-main--active {
+  background-color: $g-color-main !important;
+}
+
+.g-bg-secondary {
+  background-color: $g-color-secondary;
+}
+
+.g-bg-dark {
+  background-color: $g-color-dark;
+
+	&-light-v1 {
+  	background-color: $g-color-dark-light-v1;
+	}
+
+	&-opacity-0_8--after::after {
+  	background-color: rgba($g-color-dark-light-v1, .95);
+	}
+}
+
+/*------------------------------------
+  Border Colors
+------------------------------------*/
+.g-brd-main {
+	&-light-v1 {
+  	border-color: $g-color-main-light-v1 !important;
+	}
+
+  &--hover:hover {
+    border-color: $g-color-main !important;
+  }
+}
+
+.active.g-brd-primary--active {
+  border-color: $g-color-primary !important;
+}
+
+.g-brd-primary {
+	&-light-v1 {
+  	border-color: $g-color-primary-light-v1 !important;
+	}
+}
+
+.g-brd-text {
+	border-color: $g-color-text !important;
+}
+
+/*--------------------------------------------------
+  Info Block v10-1
+----------------------------------------------------*/
+.u-info-v10-1 {
+  &::before,
+  &::after {
+    background: $g-color-gray-light-v4;
+  }
+}
+
+/*------------------------------------
+  Dropdown Toggle
+------------------------------------*/
+.dropdown-toggle::after {
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	margin-top: -4px;
+}
+
+/*------------------------------------
+  Box-shadows-v29
+------------------------------------*/
+.u-shadow-v29 {
+	&--hover:hover {
+  	box-shadow: 0 15px 50px 0 rgba($g-color-main, .2);
+	}
+}
+
+/*------------------------------------
+  Carousel indicators v33
+------------------------------------*/
+.u-carousel-indicators-v33 {
+  li {
+    color: $g-color-text;
+  }
+}
