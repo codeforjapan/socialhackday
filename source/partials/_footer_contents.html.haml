@@ -109,7 +109,7 @@
         .col-md-4.text-center.text-md-left.g-mb-30
           / Logo
           %a.g-text-underline--none--hover.mr-4{:href => "home-page-1.html"}
-            %img.g-width-95{:alt => "Logo", :src => "assets/img/logo/logo-white.png"}/
+            %img.g-width-95{:alt => "Logo", :src => "assets/images/logo-white.png"}/
           / End Logo
           %p.d-inline-block.align-middle.g-font-size-13.mb-0
             \© 2017 Htmlstream.
@@ -146,14 +146,11 @@
 
 -# = Unify Javascript
 = javascript_include_tag "vendor/jquery/jquery.min.js"
--# =    <script src="../../assets/vendor/jquery/jquery.min.js"></script>
--#  <script src="../../assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
--#    <script src="../../assets/vendor/popper.min.js"></script>
--#    <script src="../../assets/vendor/bootstrap/bootstrap.min.js"></script>
--#
--#    <!-- JS Implementing Plugins -->
--#    <script src="../../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
--#    <script src="../../assets/vendor/fancybox/jquery.fancybox.min.js"></script>
--#    <script src="../../assets/vendor/appear.js"></script>
--#    <script src="../../assets/vendor/slick-carousel/slick/slick.js"></script>
--#    <script src="../../assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+= javascript_include_tag "vendor/jquery-migrate/jquery-migrate.min.js"
+= javascript_include_tag "vendor/popper.min.js"
+= javascript_include_tag "vendor/bootstrap/bootstrap.min.js"
+= javascript_include_tag "vendor/hs-megamenu/src/hs.megamenu.js"
+= javascript_include_tag "vendor/fancybox/jquery.fancybox.min.js"
+= javascript_include_tag "vendor/appear.js"
+= javascript_include_tag "vendor/slick-carousel/slick/slick.js"
+= javascript_include_tag "vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"
