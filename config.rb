@@ -41,4 +41,5 @@ end
 after_build do |builder|
   FileUtils.cp_r 'lib/vendor', 'build'
 end
-#activate :livereload
+
+activate :relative_assets
