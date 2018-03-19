@@ -35,10 +35,10 @@ end
 
 # import vendor path in case `middleman server`
 configure :development do
-  import_path File.expand_path('public/vendor', app.root)
+  import_path File.expand_path('lib/vendor', app.root)
 end
 # copy vendor path in case `middleman build`
 after_build do |builder|
-  FileUtils.cp_r 'public/vendor', 'build'
+  FileUtils.cp_r 'lib/vendor', 'build'
 end
 #activate :livereload
