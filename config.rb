@@ -15,7 +15,6 @@ set :css_dir, "assets/stylesheets"
 set :images_dir, "assets/images"
 set :js_dir, "assets/javascripts"
 
-import_path File.expand_path('public/vendor', app.root)
 
 configure :build do
   activate :external_pipeline,
@@ -26,7 +25,6 @@ configure :build do
 
   ignore "assets/javascripts/all.js"
   ignore "assets/stylesheets/site"
-
   activate :gzip
 
   activate :minify_html do |html|
@@ -35,7 +33,12 @@ configure :build do
   end
 end
 
+# import vendor path in case `middleman server`
+configure :development do
+  import_path File.expand_path('public/vendor', app.root)
+end
+# copy vendor path in case `middleman build`
 after_build do |builder|
-  FileUtils.cp_r 'public/.', 'build'
+  FileUtils.cp_r 'public/vendor', 'build'
 end
 #activate :livereload
