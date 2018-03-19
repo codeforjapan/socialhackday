@@ -1,6 +1,6 @@
 # This file is a template, and might need editing before it works on your project.
 # Full project: https://gitlab.com/pages/middleman
-image: ruby:2.3
+image: ruby:2.4
 
 variables:
   S3_BUCKET_STAGING: "vision-prodriver/preview"
@@ -21,9 +21,10 @@ build:
   script:
   - rm -Rf public
   - apt-get update -yqqq
-  - apt-get install -y nodejs
-  - bundle install --path vendor
-  - bundle exec middleman build --build-dir=public --clean
+  - curl -sL https://deb.nodesource.com/setup_8.x | bash -
+  - apt-get install -y nodejs build-essential
+  - bundle install --path vendor && npm install
+  - bundle exec middleman build --environment="production" --build-dir=public --clean
 
 staging:
   stage: deploy
