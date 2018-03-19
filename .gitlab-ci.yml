@@ -21,7 +21,7 @@ build:
   script:
   - rm -Rf public
   - apt-get update -yqqq
-  - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+  - curl -sL https://deb.nodesource.com/setup_8.x | bash -
   - apt-get install -y nodejs build-essential
   - bundle install --path vendor && npm install
   - bundle exec middleman build --environment="production" --build-dir=public --clean
