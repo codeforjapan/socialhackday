@@ -1,70 +1,75 @@
-%header#js-header.u-header.u-header--sticky-top.u-header--toggle-section.u-header--change-appearance.u-shadow-v19
-  .u-header__section.g-bg-white.g-transition-0_3
-    %nav.js-mega-menu.navbar.navbar-expand-lg.g-pa-0
+%header#js-header.u-header.u-header--sticky-top.u-header--toggle-section.u-header--change-appearance{"data-header-fix-effect" => "slide", "data-header-fix-moment" => "200"}
+  .text-center.text-lg-left.u-header__section.u-header__section--hidden.u-header__section--light.g-bg-white.g-brd-bottom.g-brd-gray-light-v4.g-py-20
+    .container
+      .row.flex-lg-row.align-items-center.justify-content-lg-start
+        .col-6.col-sm-3.col-lg-2
+          / Logo
+          %a.js-go-to.navbar-brand{"data-type" => "static", :href => "#!"}
+            %img.img-fluid.g-width-150{:alt => "Logo", :src => "assets/images/logo.png"}/
+          / End Logo
+        .col-6.col-sm-9.col-lg-10
+          .row
+            .col-sm.g-brd-right--sm.g-brd-gray-light-v4
+              .g-pa-10--lg
+                %span.icon.icon-screen-smartphone.g-valign-middle.g-font-size-18.g-color-primary.g-mr-5
+                %span.text-uppercase.g-font-size-13 Call Us
+                %strong.d-block.g-pl-25 +469 548 521
+            .col-sm.g-hidden-lg-down.g-brd-right--sm.g-brd-gray-light-v4
+              .g-pa-10--lg
+                %span.icon.icon-clock.g-valign-middle.g-font-size-18.g-color-primary.g-mr-5
+                %span.text-uppercase.g-font-size-13 Opening time
+                %strong.d-block.g-pl-25 Mon-Sat: 08.00 - 18.00
+            .col-sm.g-hidden-sm-down.g-brd-right--sm.g-brd-gray-light-v4
+              .g-pa-10--lg
+                %span.icon.icon-envelope.g-valign-middle.g-font-size-18.g-color-primary.g-mr-5
+                %span.text-uppercase.g-font-size-13 Email us
+                %strong.d-block.g-pl-25 market@info.com
+            .col-sm.g-hidden-sm-down
+              %ul.list-inline.mb-0.g-pa-10--lg
+                %li.list-inline-item.g-valign-middle.g-mx-3
+                  %a.d-block.u-icon-v3.u-icon-size--sm.g-rounded-50x.g-bg-gray-light-v4.g-color-gray-light-v1.g-bg-primary--hover.g-color-white--hover{:href => "#!"}
+                    %i.fa.fa-facebook.g-font-size-default
+                %li.list-inline-item.g-valign-middle.g-mx-3
+                  %a.d-block.u-icon-v3.u-icon-size--sm.g-rounded-50x.g-bg-gray-light-v4.g-color-gray-light-v1.g-bg-primary--hover.g-color-white--hover{:href => "#!"}
+                    %i.fa.fa-twitter.g-font-size-default
+                %li.list-inline-item.g-valign-middle.g-mx-3
+                  %a.d-block.u-icon-v3.u-icon-size--sm.g-rounded-50x.g-bg-gray-light-v4.g-color-gray-light-v1.g-bg-primary--hover.g-color-white--hover{:href => "#!"}
+                    %i.fa.fa-instagram.g-font-size-default
+  .u-header__section.u-header__section--dark.g-bg-gray-dark-v1.g-py-15{"data-header-fix-moment-classes" => "u-shadow-v18"}
+    %nav.navbar.navbar-expand-lg.py-0
       .container
-        / Logo
-        %a.navbar-brand.g-pl-15{:href => "home-page-1.html"}
-          %img.g-width-95{:alt => "Logo", :src => "assets/images/logo.png"}/
-        / End Logo
+        / Navigation
+        #navBar.collapse.navbar-collapse.align-items-center.flex-sm-row.g-mr-40--sm
+          %ul#js-scroll-nav.navbar-nav.text-uppercase.g-font-weight-700.g-py-10--md.mr-auto
+            %li.nav-item.g-mr-15--lg.g-mb-7.g-mb-0--lg.active
+              %a.nav-link.g-color-primary--hover.p-0{:href => "#home"}
+                Home
+                %span.sr-only (current)
+            %li.nav-item.g-mx-15--lg.g-mb-7.g-mb-0--lg
+              %a.nav-link.g-color-primary--hover.p-0{:href => "#about"} About
+            %li.nav-item.g-mx-15--lg.g-mb-7.g-mb-0--lg
+              %a.nav-link.g-color-primary--hover.p-0{:href => "#services"} Services
+            %li.nav-item.g-mx-15--lg.g-mb-7.g-mb-0--lg
+              %a.nav-link.g-color-primary--hover.p-0{:href => "#skills"} Skills
+            %li.nav-item.g-mx-15--lg.g-mb-7.g-mb-0--lg
+              %a.nav-link.g-color-primary--hover.p-0{:href => "#offers"} Offers
+            %li.nav-item.g-mx-15--lg.g-mb-7.g-mb-0--lg
+              %a.nav-link.g-color-primary--hover.p-0{:href => "#gallery"} Gallery
+            %li.nav-item.g-mx-15--lg.g-mb-7.g-mb-0--lg
+              %a.nav-link.g-color-primary--hover.p-0{:href => "#FAQ"} FAQ
+            %li.nav-item.g-mx-15--lg.g-mb-7.g-mb-0--lg
+              %a.nav-link.g-color-primary--hover.p-0{:href => "#testimonials"} Testimonials
+            %li.nav-item.g-ml-15--lg
+              %a.nav-link.g-color-primary--hover.p-0{:href => "#contact"} Contact
+        / End Navigation
+        / Search
+        .g-hidden-md-down.text-uppercase.g-valign-middle
+          %a.btn.btn-md.text-uppercase.u-btn-primary.g-font-weight-700.g-font-size-12.g-brd-none.g-rounded-4.g-py-12.g-px-15{:href => "#!"} Get a Quote
+        / End Search
         / Responsive Toggle Button
-        %button.navbar-toggler.navbar-toggler-right.btn.g-line-height-1.g-brd-none.g-pos-abs.g-top-10.g-right-0.g-pa-0.g-mt-2{"aria-controls" => "navBar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navBar", "data-toggle" => "collapse", :type => "button"}
-          %span.hamburger.hamburger--slider.g-px-15
+        %button.navbar-toggler.btn.g-pos-rel.g-line-height-1.g-brd-none.g-pa-0.g-pos-abs.g-top-minus-8.g-right-0{"aria-controls" => "navBar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navBar", "data-toggle" => "collapse", :type => "button"}
+          %span.hamburger.hamburger--slider
             %span.hamburger-box
               %span.hamburger-inner
         / End Responsive Toggle Button
-        / Navigation
-        #navBar.collapse.navbar-collapse.align-items-center.flex-sm-row
-          %ul.navbar-nav.ml-auto.g-pb-30.g-pb-0--lg
-            %li.nav-item.g-mx-15.g-mx-3--lg.g-mb-5.g-mb-0--lg
-              %a.nav-link.rounded.g-color-primary--hover.g-bg-transparent.g-bg-main--hover.g-font-weight-600.g-font-size-15.g-px-14.g-py-10{:href => "home-page-1.html"}
-                Home
-            / About - Submenu
-            %li.nav-item.hs-has-sub-menu.g-mx-15.g-mx-3--lg.g-mb-5.g-mb-0--lg
-              %a#nav-link--page.nav-link.rounded.g-color-primary--hover.g-bg-transparent.g-bg-main--hover.g-font-weight-600.g-font-size-15.g-px-14.g-py-10{"aria-controls" => "nav-submenu--page", "aria-expanded" => "false", "aria-haspopup" => "true", :href => "#"}
-                About
-              / Submenu
-              %ul#nav-submenu--page.hs-sub-menu.list-unstyled.u-shadow-v11.g-min-width-220.g-mt-18{"aria-labelledby" => "nav-link--page"}
-                %li.dropdown-item
-                  %a.nav-link.g-color-text.g-font-weight-600{:href => "page-about-1.html"} About
-                %li.dropdown-item
-                  %a.nav-link.g-color-text.g-font-weight-600{:href => "page-services-1.html"} Services
-                %li.dropdown-item
-                  %a.nav-link.g-color-text.g-font-weight-600{:href => "page-consultants-1.html"} Consultants
-                %li.dropdown-item
-                  %a.nav-link.g-color-text.g-font-weight-600{:href => "page-works-1.html"} Works
-                %li.dropdown-item
-                  %a.nav-link.g-color-text.g-font-weight-600{:href => "page-hire-us-1.html"} Hire Us
-                %li.dropdown-item
-                  %a.nav-link.g-color-text.g-font-weight-600{:href => "page-careers-1.html"} Careers
-              / End Submenu
-            / End About - Submenu
-            %li.nav-item.g-mx-15.g-mx-3--lg.g-mb-5.g-mb-0--lg
-              %a.nav-link.rounded.g-color-primary--hover.g-bg-transparent.g-bg-main--hover.g-font-weight-600.g-font-size-15.g-px-14.g-py-10{:href => "page-help-1.html"}
-                Help
-            %li.nav-item.g-mx-15.g-mx-3--lg.g-mb-5.g-mb-0--lg
-              %a.nav-link.rounded.g-color-primary--hover.g-bg-transparent.g-bg-main--hover.g-font-weight-600.g-font-size-15.g-px-14.g-py-10{:href => "page-pricing-1.html"}
-                Pricing
-            %li.nav-item.g-mx-15.g-mx-3--lg.g-mb-5.g-mb-0--lg
-              %a.nav-link.rounded.g-color-primary--hover.g-bg-transparent.g-bg-main--hover.g-font-weight-600.g-font-size-15.g-px-14.g-py-10{:href => "page-contacts-1.html"}
-                Contacts
-            %li.nav-item.g-mx-15.g-mx-3--lg.g-mb-5.g-mb-0--lg
-              %a.nav-link.d-inline-block.rounded.g-brd-around.g-brd-2.g-brd-primary.g-color-primary--hover.g-bg-transparent.g-bg-main--hover.g-font-weight-600.g-font-size-15.g-px-20.g-py-8{:href => "../../index.html"} Main
-        / End Navigation
-        / Social Icons
-        %ul.col-auto.list-inline.g-pos-rel.g-top-minus-3.g-py-20.g-py-6--lg.g-pr-5.g-mr-60.g-mr-0--lg.ml-auto.ml-lg-0.mb-0
-          %li.list-inline-item.g-mx-0
-            %a.u-icon-v3.u-icon-size--xs.g-bg-transparent.g-bg-main--hover.rounded{:href => "#"}
-              %i.fa.fa-facebook
-          %li.list-inline-item.g-mx-0
-            %a.u-icon-v3.u-icon-size--xs.g-bg-transparent.g-bg-main--hover.rounded{:href => "#"}
-              %i.fa.fa-twitter
-          %li.list-inline-item.g-mx-0
-            %a.u-icon-v3.u-icon-size--xs.g-bg-transparent.g-bg-main--hover.rounded{:href => "#"}
-              %i.fa.fa-pinterest
-        / End Social Icons
-        .col-auto.g-hidden-md-down.g-pr-0
-          .g-bg-main.g-cursor-pointer.g-px-25.g-py-20
-            %span.d-block.g-color-primary.g-font-size-11.mb-1 (0161) 347 8854
-            %span.d-block.g-color-primary
-              %i.mr-2.fa.fa-phone
-              Request a Call
+/ End Header

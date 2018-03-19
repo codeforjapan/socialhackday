@@ -1,61 +1,103 @@
 ---
 title: Welcome to Middleman
 ---
+/ Section Content
+%section#home.u-bg-overlay.g-height-100vh.g-bg-img-hero.g-bg-black-opacity-0_3--after.g-py-20{:style => "background-image: url(assets/images/img-temp/1732x1155/img1.jpg);"}
+  .u-bg-overlay__inner.g-absolute-centered--y.w-100
+    .container.g-z-index-1.g-py-100
+      .row
+        .col-md-6.col-lg-5.align-self-center
+          .g-bg-white.g-rounded-5.g-pa-15.g-pa-30--md
+            %h3.h6.g-color-black.g-font-weight-600.text-uppercase.text-center.g-mb-25 Calculate shipping cost
+            / Promo Block - Form
+            %form
+              .form-group.g-mb-10.g-mb-20--md
+                %input.form-control.g-theme-color-gray-light-v10.g-placeholder-inherit.g-brd-gray-light-v5.g-bg-gray-light-v5.g-bg-gray-light-v5--focus.g-px-10.g-py-12{:placeholder => "Start Location", :type => "text"}/
+              .form-group.g-mb-10.g-mb-20--md
+                %input.form-control.g-theme-color-gray-light-v10.g-placeholder-inherit.g-brd-gray-light-v5.g-bg-gray-light-v5.g-bg-gray-light-v5--focus.g-px-10.g-py-12{:placeholder => "End Location", :type => "text"}/
+              .form-group.g-mb-10.g-mb-20--md
+                %select.js-custom-select.u-select-v1.g-theme-color-gray-light-v10.g-brd-gray-light-v5.g-bg-gray-light-v5.g-rounded-4.g-pa-10{"data-close-icon" => "fa fa-sort", "data-control-classes" => "g-color-gray-dark-v2 g-bg-gray-light-v5", "data-disable-search" => "true", "data-open-icon" => "fa fa-sort", "data-placeholder" => "Cargo Type", :style => "width: 100%;"}
+                  %option
+                  %option{:value => "1"} 1
+                  %option{:value => "2"} 2
+                  %option{:value => "3"} 3
+              .row
+                .col-md-4
+                  .form-group.g-mb-10.g-mb-20--md
+                    %input.form-control.g-theme-color-gray-light-v10.g-placeholder-inherit.g-brd-gray-light-v5.g-bg-gray-light-v5.g-bg-gray-light-v5--focus.g-px-10.g-py-12{:placeholder => "Height", :type => "text"}/
+                .col-md-4
+                  .form-group.g-mb-10.g-mb-20--md
+                    %input.form-control.g-theme-color-gray-light-v10.g-placeholder-inherit.g-brd-gray-light-v5.g-bg-gray-light-v5.g-bg-gray-light-v5--focus.g-px-10.g-py-12{:placeholder => "Width", :type => "text"}/
+                .col-md-4
+                  .form-group.g-mb-10.g-mb-20--md
+                    %input.form-control.g-theme-color-gray-light-v10.g-placeholder-inherit.g-brd-gray-light-v5.g-bg-gray-light-v5.g-bg-gray-light-v5--focus.g-px-10.g-py-12{:placeholder => "Length", :type => "text"}/
+              .row
+                .col-md-6
+                  .form-group.g-mb-10.g-mb-20--md
+                    %input.form-control.g-brd-gray-light-v5.g-bg-gray-light-v5.g-bg-gray-light-v5--focus.g-px-10.g-py-12{:placeholder => "Name", :type => "text"}/
+                .col-md-6
+                  .form-group.g-mb-10.g-mb-20--md
+                    %input.form-control.g-theme-color-gray-light-v10.g-placeholder-inherit.g-brd-gray-light-v5.g-bg-gray-light-v5.g-bg-gray-light-v5--focus.g-px-10.g-py-12{:placeholder => "Email", :type => "email"}/
+              %button.btn.btn-md.btn-block.text-uppercase.u-btn-primary.g-font-weight-700.g-font-size-12.g-brd-none.g-rounded-4.g-py-12.g-px-15{:type => "submit"} Calculate
+            / End Promo Block - Form
+        / Promo Block - Info
+        .col-md-6.col-lg-7.g-hidden-sm-down.align-self-center.g-color-white
+          %h2.text-uppercase.g-line-height-1.g-font-weight-700.g-font-size-40.g-font-size-56--md.g-color-white.g-mb-30
+            Planning
+            &amp; Shiping
+          %h3.text-uppercase.g-font-weight-700.g-font-size-18.g-color-white.g-mb-20 Delivering anything to anywhere
+          %p.g-font-size-default.g-color-white-opacity-0_8.g-mb-35 Maecenas lacus magna, pretium in congue a, pharetra at lacus. Nulla neque justo, sodales vitae dui non, imperdiet luctus libero.
+          %a.btn.btn-md.text-uppercase.u-btn-primary.g-font-weight-700.g-font-size-12.g-brd-none.g-rounded-4.g-py-12.g-px-25{:href => "#!"} Learn more
+        / End Promo Block - Info
+/ End Section Content
 
-/ About
-.container.g-pt-100.g-pb-70
-  .row.justify-content-between.align-items-center
-    .col-lg-7.g-mb-50
-      / About Info
-      .mb-5
-        %span.d-block.text-uppercase.g-color-dark-light-v1.g-font-weight-500.g-font-size-13.mb-4 What is Unify Marketing?
-        %h2.mb-4 Your Management and Comprehensive Solution
-        .row
-          .col-sm-3
-            / Nav tabs
-            %ul.nav.flex-column{"data-target" => "nav-1-1-accordion-primary-ver", :role => "tablist"}
-              %li.nav-item
-                %a.nav-link.active.g-color-primary--hover.g-color-primary--parent-active.g-pl-0{"data-toggle" => "tab", :href => "#nav-1-1-accordion-primary-ver--1", :role => "tab"} Who we are
-              %li.nav-item
-                %a.nav-link.g-color-primary--hover.g-color-primary--parent-active.g-pl-0{"data-toggle" => "tab", :href => "#nav-1-1-accordion-primary-ver--2", :role => "tab"} Our vision
-              %li.nav-item
-                %a.nav-link.g-color-primary--hover.g-color-primary--parent-active.g-pl-0{"data-toggle" => "tab", :href => "#nav-1-1-accordion-primary-ver--3", :role => "tab"} Our mission
-              %li.nav-item
-                %a.nav-link.g-color-primary--hover.g-color-primary--parent-active.g-pl-0{"data-toggle" => "tab", :href => "#nav-1-1-accordion-primary-ver--4", :role => "tab"} Our History
-            / End Nav tabs
-          .col-sm-9
-            / Tab panes
-            #nav-1-1-accordion-primary-ver.tab-content
-              #nav-1-1-accordion-primary-ver--1.tab-pane.fade.show.active{:role => "tabpanel"}
-                %p.g-line-height-2 Whether through commerce or just an experience to tell your brand's story, the time has come to start using development languages that fit your projects needs. The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.
-                %p.g-line-height-2 Now that your brand is all dressed up and ready to party, it's time to release it to the world. By the way, let's celebrate already.
-              #nav-1-1-accordion-primary-ver--2.tab-pane.fade{:role => "tabpanel"}
-                %p.g-line-height-2 We aim high at being focused on building relationships with our clients and community. Using our creative gifts drives this foundation.
-                %p.g-line-height-2 Working together on the daily requires each individual to let the greater good of the team's work surface above their own ego. It's important to stay detail oriented with every project we tackle. Staying focused allows us to turn every project we complete into something we love.
-              #nav-1-1-accordion-primary-ver--3.tab-pane.fade{:role => "tabpanel"}
-                %p.g-line-height-2 We strive to embrace and drive change in our industry which allows us to keep our clients relevant and ready to adapt. As creatives, it's important that we strive to do work outside of obligation. This lets us stay ahead of the curve for our clients and internal projects.
-              #nav-1-1-accordion-primary-ver--4.tab-pane.fade{:role => "tabpanel"}
-                %p.g-line-height-2 Understanding who you are and what you want is our strategy for your brand. We are always figuring out ways to capture your vision, so people can get on board.
-            / End Tab panes
-        / End Tab
-      %a.btn.u-btn-black.g-brd-main.g-brd-primary--hover.g-bg-main.g-bg-primary--hover.g-font-weight-600.g-font-size-12.text-uppercase.g-px-25.g-py-13.mr-3{:href => "page-about-1.html"}
-        About Us
-        %i.g-pos-rel.g-top-minus-1.ml-2.fa.fa-angle-right
-      %a.g-brd-bottom.g-brd-main.g-brd-primary--hover.g-color-main.g-color-primary--hover.g-font-size-12.text-uppercase.g-text-underline--none--hover.g-pb-3{:href => "page-contacts-1.html"}
-        Ask a Question
-      / End About Info
-    .col-sm-8.col-md-6.col-lg-4.mx-auto.g-mb-50
-      / About Info
-      .d-inline-block.u-shadow-v20.g-width-300.g-height-300.g-brd-around.g-brd-10.g-brd-white.g-bg-cover.g-bg-main-opacity-0_9--after.g-rounded-circle--after.text-center.rounded-circle.g-pa-50{:style => "background-image: url(assets/img-temp/300x300/img1.jpg);"}
-        .g-pos-rel.g-z-index-1
-          %span.d-block.g-color-white-opacity-0_6.g-font-size-13.text-uppercase Trusted by
-          %span.d-block.g-color-white.g-font-weight-300.g-font-size-90.g-line-height-1_2.mb-2 32k+
-          %span.d-block.g-color-white.g-font-weight-300.g-font-size-13.text-uppercase
-            Users all
-            %br>/
-            over the world
-        %a.js-fancybox.d-flex.g-text-underline--none--hover.ml-auto.g-mt-15{"data-caption" => "Video Popup", "data-speed" => "350", "data-src" => "//www.youtube.com/embed/BNpiwOkKIJ8?autoplay=1", :href => "javascript:;"}
-          %span.u-icon-v3.u-icon-size--xl.u-icon-scale-1_2--hover.g-bg-primary.g-color-white.rounded-circle.g-pos-rel.g-z-index-1.g-cursor-pointer
-            %i.g-font-size-17.g-pos-rel.g-left-2.fa.fa-play
-      / End About Info
-/ End About
+
+/ Section Content
+%section.g-py-50
+  .container.text-center.text-md-left.g-max-width-960
+    .row.justify-content-md-around
+      .col-md-8.align-self-md-center
+        %h2.text-uppercase.g-line-height-1_1.g-font-weight-700.g-font-size-32
+          Order now and get
+          %span.g-color-primary 20% off
+        %p.g-mb-20.g-mb-0--md Raecenas lacus magna, pretium in congue a, pharetra at lacus imperdiet luctus libero
+      .col-md-4.align-self-md-center.text-md-center
+        %a.btn.btn-md.text-uppercase.u-btn-darkgray.g-font-weight-700.g-font-size-12.g-brd-none.g-rounded-4.g-py-15.g-px-15.g-px-35--md{:href => "#!"} Calculate and order
+/ End Section Content
+/ Section Content
+%section
+  .row.no-gutters
+    .col-md-4.g-brd-around.g-brd-top-none.g-brd-gray-light-v4
+      / Article
+      %article.u-block-hover
+        %figure.u-bg-overlay.g-bg-black-opacity-0_4--after.g-overflow-hidden.g-ml-minus-1--md.g-mr-minus-1--md
+          %img.img-fluid.w-100.u-block-hover__main--zoom-v1{:alt => "Image description", :src => "assets/images/img-temp/600x400/img1.jpg"}/
+        .text-center.g-pa-40
+          %h3.text-uppercase.g-font-weight-700.g-font-size-22.g-mb-15
+            %a.g-color-gray-dark-v2.g-text-underline--none--hover{:href => "#!"} Cargo
+          %p Sed feugiat porttitor nunc, non dignissim ipsum vestibulum in. Donec in blandit dolor. Vivamus a fringilla lorem
+          %a.text-uppercase.g-font-weight-600.g-font-size-12{:href => "#!"} Learn More
+      / End Article
+    .col-md-4.g-brd-around.g-brd-top-none.g-brd-gray-light-v4.g-ml-minus-1--md.g-mr-minus-1--md
+      / Article
+      %article.u-block-hover
+        %figure.u-bg-overlay.g-bg-black-opacity-0_4--after.g-overflow-hidden.g-ml-minus-1--md.g-mr-minus-1--md
+          %img.img-fluid.w-100.u-block-hover__main--zoom-v1{:alt => "Image description", :src => "assets/images/img-temp/600x400/img2.jpg"}/
+        .text-center.g-pa-40
+          %h3.text-uppercase.g-font-weight-700.g-font-size-22.g-mb-15
+            %a.g-color-gray-dark-v2.g-text-underline--none--hover{:href => "#!"} Logistic services
+          %p Sed feugiat porttitor nunc, non dignissim ipsum vestibulum in. Donec in blandit dolor. Vivamus a fringilla lorem
+          %a.text-uppercase.g-font-weight-600.g-font-size-12{:href => "#!"} Learn More
+      / End Article
+    .col-md-4.g-brd-around.g-brd-top-none.g-brd-gray-light-v4
+      / Article
+      %article.u-block-hover
+        %figure.u-bg-overlay.g-bg-black-opacity-0_4--after.g-overflow-hidden.g-ml-minus-1--md.g-mr-minus-1--md
+          %img.img-fluid.w-100.u-block-hover__main--zoom-v1{:alt => "Image description", :src => "assets/images/img-temp/600x400/img3.jpg"}/
+        .text-center.g-pa-40
+          %h3.text-uppercase.g-font-weight-700.g-font-size-22.g-mb-15
+            %a.g-color-gray-dark-v2.g-text-underline--none--hover{:href => "#!"} Storage
+          %p Sed feugiat porttitor nunc, non dignissim ipsum vestibulum in. Donec in blandit dolor. Vivamus a fringilla lorem
+          %a.text-uppercase.g-font-weight-600.g-font-size-12{:href => "#!"} Learn More
+      / End Article
+/ End Section Content
