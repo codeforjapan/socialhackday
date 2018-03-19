@@ -39,7 +39,7 @@ configure :development do
 end
 # copy vendor path in case `middleman build`
 after_build do |builder|
-  FileUtils.cp_r 'lib/vendor', 'build'
+  FileUtils.cp_r 'lib/vendor', config[:build_dir]
 end
 
 activate :relative_assets
