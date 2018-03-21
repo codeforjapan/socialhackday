@@ -40,35 +40,35 @@ Development
 -----------
 [Setup](Setup.md) environment
 
-1. Create new branch
-2. Modify sources in the source directory.
+(1) Create new branch
+(2) Modify sources in the source directory.
 
-  ### directory structure
-  | Directories  | Usage  |
-  |-----|-----|
-  | Gemfile | gems |
-  | Gemfile.lock | gems' version |
-  | bin | setup comannd |
-  | build | html files will be created after build |
-  | config.rb | middleman setting |
-  | data | data folder for middleman |
-  | environments | settings for environments |
-  | gulpfile.js | used in build phase |
-  | helpers | middleman helpers |
-  | lib | libraries copied from Unify theme |
-  | node_modules | will be created by node install |
-  | package.json | node modules |
-  | package-lock.json | node modules' versions |
-  | **source** | source folder |
-  | spec | middleman spec (don't use) |
-  | vendor | will be created after bundle install |
+### directory structure
+| Directories  | Usage  |
+|-----|-----|
+| Gemfile | gems |
+| Gemfile.lock | gems' version |
+| bin | setup comannd |
+| build | html files will be created after build |
+| config.rb | middleman setting |
+| data | data folder for middleman |
+| environments | settings for environments |
+| gulpfile.js | used in build phase |
+| helpers | middleman helpers |
+| lib | libraries copied from Unify theme |
+| node_modules | will be created by node install |
+| package.json | node modules |
+| package-lock.json | node modules' versions |
+| **source** | source folder |
+| spec | middleman spec (don't use) |
+| vendor | will be created after bundle install |
 
-3. Run `bundle exec middleman start`
+(3) Run `bundle exec middleman start`
 Check changes via launched browser.
 
-4. Commit and push the branch to this repository.
+(4) Commit and push the branch to this repository.
 
-5. Send a pull request.
+(5) Send a pull request.
 
 Setup
 -----
