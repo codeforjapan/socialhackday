@@ -76,9 +76,12 @@ gem install middleman
 ...
 % npm install
 ...
+% bundle install --path=vendor
+...
 ```
 
-## setup
+## test
 ```
-
+bundle exec middleman server
 ```
+If it works, a browser will be launched and you will see the html!
