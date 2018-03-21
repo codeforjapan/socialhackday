@@ -42,7 +42,6 @@ Development
 
 1. Create new branch
 2. Modify sources in the source directory.
-
 ### directory structure
 | Directories  | Usage  |
 |-----|-----|
@@ -62,7 +61,6 @@ Development
 | **source** | source folder |
 | spec | middleman spec (don't use) |
 | vendor | will be created after bundle install |
-
 3. Run `bundle exec middleman start`
 Check changes via launched browser.
 
