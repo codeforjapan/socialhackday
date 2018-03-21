@@ -32,7 +32,7 @@ Deployment
 ----------
 
 - Updating `develop` branch will automatically deploy them to the staging server.
-- Updating `production` branch will automatically deploy them to the production server.
+- Updating `master` branch will automatically deploy them to the production server.
 
 **Do not directly commit to those branches. Use pull requests**
 
