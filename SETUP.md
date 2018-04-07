@@ -69,7 +69,7 @@ gem install middleman
 
 ## setup
 ```
-% git clone git@hub.georepublic.net:vision-net/website.git
+% git clone https://github.com/codeforjapan/socialhackday.git
 ...
 % cd website
 % bin/setup
