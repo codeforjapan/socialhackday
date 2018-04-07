@@ -7,3 +7,73 @@
       = partial "partials/menu"
       = yield
       = partial "partials/footer_contents"
+    .u-outer-spaces-helper
+    / JS Global Compulsory
+    %script{:src => "vendor/jquery/jquery.min.js"}
+    %script{:src => "vendor/jquery-migrate/jquery-migrate.min.js"}
+    %script{:src => "vendor/popper.min.js"}
+    %script{:src => "vendor/bootstrap/bootstrap.min.js"}
+    / JS Implementing Plugins
+    %script{:src => "vendor/hs-megamenu/src/hs.megamenu.js"}
+    %script{:src => "vendor/dzsparallaxer/dzsparallaxer.js"}
+    %script{:src => "vendor/dzsparallaxer/dzsscroller/scroller.js"}
+    %script{:src => "vendor/dzsparallaxer/advancedscroller/plugin.js"}
+    %script{:src => "vendor/fancybox/jquery.fancybox.min.js"}
+    %script{:src => "vendor/slick-carousel/slick/slick.js"}
+    %script{:src => "vendor/typedjs/typed.min.js"}
+    / JS Unify
+    %script{:src => "assets/javascripts/unify/hs.core.js"}
+    %script{:src => "assets/javascripts/unify/components/hs.header.js"}
+    %script{:src => "assets/javascripts/unify/helpers/hs.hamburgers.js"}
+    %script{:src => "assets/javascripts/unify/components/hs.tabs.js"}
+    %script{:src => "assets/javascripts/unify/components/hs.popup.js"}
+    %script{:src => "assets/javascripts/unify/components/hs.carousel.js"}
+    %script{:src => "assets/javascripts/unify/components/text-animation/hs.text-slideshow.js"}
+    %script{:src => "assets/javascripts/unify/components/hs.go-to.js"}
+
+    / JS Plugins Init.
+    :javascript
+      $(document).on('ready', function () {
+          // initialization of carousel
+          $.HSCore.components.HSCarousel.init('.js-carousel');
+
+          // initialization of tabs
+          $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+          // initialization of popups
+          $.HSCore.components.HSPopup.init('.js-fancybox');
+
+          // initialization of go to
+          $.HSCore.components.HSGoTo.init('.js-go-to');
+
+          // initialization of text animation (typing)
+          $(".u-text-animation.u-text-animation--typing").typed({
+            strings: [
+              "an awesome template",
+              "perfect template",
+              "just like a boss"
+            ],
+            typeSpeed: 60,
+            loop: true,
+            backDelay: 1500
+          });
+        });
+
+        $(window).on('load', function () {
+          // initialization of header
+          $.HSCore.components.HSHeader.init($('#js-header'));
+          $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+          // initialization of HSMegaMenu component
+          $('.js-mega-menu').HSMegaMenu({
+            event: 'hover',
+            pageContainer: $('.container'),
+            breakpoint: 991
+          });
+        });
+
+        $(window).on('resize', function () {
+          setTimeout(function () {
+            $.HSCore.components.HSTabs.init('[role="tablist"]');
+          }, 200);
+        });
