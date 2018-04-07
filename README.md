@@ -1,14 +1,11 @@
-Prodrivers
+SocialHackDay
 ==========
 
-[![pipeline status](https://hub.georepublic.net/vision-net/website/badges/develop/pipeline.svg)](https://hub.georepublic.net/vision-net/website/commits/develop)
-
-This is a source code for the front end web service of Prodrivers.
+This is a source code for the front end web service of SocialHackDay
 
 Features
 --------
 - [Unify][unify] theme (version 4) which is compiled by [Middleman][middleman]
-- [Gitlab CI][gitlabci] auto deployment for staging and production servers
 
 Requirements
 ------------
