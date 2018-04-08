@@ -15,6 +15,12 @@ Requirements
 * [Node 6.x][nvm]
 * [Gulp CLI][gulp-cli]
 
+Setup
+-----
+Please see [SETUP.md](SETUP.md)
+If you use Docker, please see [README.docker.md](README.docker.md)
+
+
 Environments
 ------------
 
@@ -35,8 +41,6 @@ Deployment
 
 Development
 -----------
-[Setup](Setup.md) environment
-
 (1) Create new branch
 (2) Modify sources in the source directory.
 
@@ -66,10 +70,6 @@ Check changes via launched browser.
 (4) Commit and push the branch to this repository.
 
 (5) Send a pull request.
-
-Setup
------
-Please see [SETUP.md](SETUP.md)
 
 [middleman]: https://middlemanapp.com/
 [unify]: https://htmlstream.com/preview/unify-v2.5.1/all-demos.html#cbpf=.unify-main
