@@ -1,8 +1,8 @@
 !!!
-%html{ lang: "ja" }
+%html{ :lang => "ja" }
   %head
     = partial "partials/head_contents"
-  %body{ class: "#{page_classes}" }
+  %body{ :class => "#{page_classes}" }
     %main
       = partial "partials/menu"
       = yield
