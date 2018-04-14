@@ -16,6 +16,20 @@ set :images_dir, "assets/images"
 set :js_dir, "assets/javascripts"
 
 
+activate :data_source do |c|
+  c.root  = "https://script.google.com/macros/s/AKfycbzykqG-CZmFsrLmUhSvpnE-V9iR0VQDxcfG_y-o-QHEtV3ghZu3"
+  c.sources = [
+    {
+      alias: "projects",
+      path: "/exec?type=projects",
+      type: :json },
+      {
+        alias: "events",
+        path: "/exec?type=events",
+        type: :json },
+  ]
+end
+
 configure :build do
   activate :external_pipeline,
     name: :gulp,

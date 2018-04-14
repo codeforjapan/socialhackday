@@ -9,6 +9,9 @@ gem "middleman-minify-html", "~> 3.4"
 # Reference: https://github.com/middleman/middleman/issues/2087
 gem "haml", "~> 5.0", ">= 5.0.2"
 
+# https://github.com/stevenosloan/middleman-data_source
+gem 'middleman-data_source'
+
 # https://middlemanapp.com/basics/blogging/
 # gem "middleman-blog", "~> 4.0", ">= 4.0.2"
 
