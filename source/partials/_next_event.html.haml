@@ -1,13 +1,18 @@
 %section.g-bg-primary.g-color-white.g-py-40.g-px-30
   .container
-    %header.g-mb-50
-      .u-heading-v2-3--bottom.g-brd-primary.g-mb-20
+    %header.g-mb-10
+      .u-heading-v2-3--bottom.g-brd-white
         %h2.h4.u-heading-v2__title.g-color-gray-dark-v2.g-font-weight-600.text-uppercase 次回のイベント
-    .row
-      .col-lg-3.align-self-lg-center
-        %img.img-fluid.w-100.g-mb-30.g-mb-0--lg{:alt => "Image description", :src => "../../assets/img-temp/400x270/img13.jpg"}/
-      .col-lg-7.align-self-lg-center
-        %h2.text-uppercase Need to do calculations?
-        %p.lead.g-mb-20.g-mb-0--lg Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-      .col-lg-2.align-self-lg-center
-        %a.btn.u-btn-darkgray.rounded-0.g-py-12.g-px-30{:href => "#!"} Order Now
+    - data.events.each do |e|
+      .row.g-brd-bottom.g-brd-1.g-brd-white.g-mb-10.g-pb-10
+        .col-lg-3.align-self-lg-center
+          - if e.event_image.blank?
+            %img.img-fluid.w-100.g-mb-30.g-mb-0--lg{:alt => "No Image", :src => "/assets/images/logo.png"}/
+          - else
+            %img.img-fluid.w-100.g-mb-30.g-mb-0--lg{:alt => "#{e.event_name}", :src => "#{e.event_image}"}/
+        .col-lg-7.align-self-lg-center
+          %p.lead.font-weight-bold #{DateTime.parse(e.date).strftime("%Y年%m月%d日")}
+          %h2.text-uppercase #{e.event_name}
+          %p.g-mb-20.g-mb-0--lg #{e.description}
+        .col-lg-2.align-self-lg-center
+          %a.btn.u-btn-darkgray.rounded-0.g-py-12.g-px-30{:href => "#{e.entry_page}"} 参加する

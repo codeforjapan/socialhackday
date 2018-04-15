@@ -23,10 +23,10 @@ activate :data_source do |c|
       alias: "projects",
       path: "/exec?type=projects",
       type: :json },
-      {
-        alias: "events",
-        path: "/exec?type=events",
-        type: :json },
+    {
+      alias: "events",
+      path: "/exec?type=events",
+      type: :json },
   ]
 end
 
