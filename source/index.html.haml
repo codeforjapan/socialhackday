@@ -35,7 +35,7 @@ title: Top
         / Icon Blocks
         .text-center
           %span.d-inline-block.u-icon-v3.u-icon-size--xl.g-bg-primary.g-color-white.rounded-circle.g-mb-30
-            %i.icon-finance-086.u-line-icon-pro
+            %i.icon-wrench
           %h3.h5.g-color-gray-dark-v2.g-font-weight-600.text-uppercase.mb-3 2ヶ月に1回の開発デー
           %p.mb-0 2ヶ月に1回のペースで集まり、継続的に開発を続けます。誰でも新しいアイデアやプロジェクトを持ち込み、仲間を集めて作業を行なうことができます。
         / End Icon Blocks
@@ -43,7 +43,7 @@ title: Top
         / Icon Blocks
         .text-center
           %span.d-inline-block.u-icon-v3.u-icon-size--xl.g-bg-primary.g-color-white.rounded-circle.g-mb-30
-            %i.icon-finance-196.u-line-icon-pro
+            %i.icon-hotel-restaurant-054.u-line-icon-pro
           %h3.h5.g-color-gray-dark-v2.g-font-weight-600.text-uppercase.mb-3 オンラインで参加可能
           %p.mb-0 ハックデーにはオンラインで参加をすることも可能です。興味があるプロジェクトがあったら、チャットなどを通じて開発に参加することが可能です。
         / End Icon Blocks
@@ -51,7 +51,7 @@ title: Top
         / Icon Blocks
         .text-center
           %span.d-inline-block.u-icon-v3.u-icon-size--xl.g-bg-primary.g-color-white.rounded-circle.g-mb-30
-            %i.icon-finance-147.u-line-icon-pro
+            %i.icon-social-github
           %h3.h5.g-color-gray-dark-v2.g-font-weight-600.text-uppercase.mb-3 オープンなプロジェクト
           %p.mb-0 興味のあるプロジェクトを見つけたら、ぜひ参加しましょう。プロジェクトリストに参加の方法が書かれています。
         / End Icon Blocks
@@ -67,7 +67,7 @@ title: Top
         .u-block-hover.text-center.g-px-20
           .g-mb-5
             %span.u-icon-v1.g-width-85.g-height-85.g-color-main.g-font-size-50.rounded-circle
-              %i.icon-education-024.u-line-icon-pro
+              %i.icon-communication-040.u-line-icon-pro
           .g-mb-25
             %span.u-icon-v2.u-shadow-v22.g-width-25.g-height-25.g-color-primary.g-bg-white.g-font-size-9.rounded-circle
               %i.fa.fa-check
@@ -120,7 +120,7 @@ title: Top
         .u-block-hover.text-center.g-px-20
           .g-mb-5
             %span.u-icon-v1.g-width-85.g-height-85.g-color-main.g-font-size-50.rounded-circle
-              %i.icon-communication-180.u-line-icon-pro
+              %i.icon-communication-049.u-line-icon-pro
           .g-mb-25
             %span.u-icon-v2.u-shadow-v22.g-width-25.g-height-25.g-color-primary.g-bg-white.g-font-size-9.rounded-circle
               %i.fa.fa-check
@@ -131,7 +131,7 @@ title: Top
             時間になったら、どんなことを行なったのかみんなで発表しよう！その日のうちに動くものができなくても大丈夫。集まったメンバーでその後も継続的に活動する方法を考えよう。最後にみんなでお祝いしよう。
         / End Icon Blocks
 / End Timeline Block
-/ Most Quality Solution
+/ Video section
 %section.g-py-40
   .container
     .row
@@ -142,14 +142,14 @@ title: Top
         %p.g-font-size-16.g-line-height-2.g-mb-30 わたしたちは、社会課題の解決には技術者だけではなく多くの人の参加が必要だと考えています。技術者やデザイナーのできることはとても多いですが、一番大切なのは課題を解決したいという思いと行動です。多様な人達がオープンに共創することで、本当に使われる解決策ができると考えています。技術者でなくても、計画を立てたり、イベントを企画したり、必要な人を連れてきたり、データを調べたり、コンテンツを考えたりといったことはできます。イベントの模様の動画を見て、雰囲気を感じてください。
         .g-mb-30
       / End Section Content
-      / Video Icon
-      .col-lg-6.order-1.order-sm-2.align-self-center.text-center.g-pos-rel.g-mb-60.g-mb-0--sm
-        / Vimeo Example
+      / Video
+      .col-lg-6.order-1.order-sm-2.align-self-center.text-center.g-pos-rel.g-mb-60.g-mb-0--sm.g-pt-60
+        / Youtube video
         .embed-responsive.embed-responsive-16by9.g-mb-30
           %iframe{:width =>"560", :height=>"315", :src=>"//www.youtube.com/embed/YE-e5fo4fSI?rel=0&amp;controls=0", :frameborder=>"0", :allow=>"autoplay; encrypted-media", :allowfullscreen => "",:webkitallowfullscreen => "",:mozallowfullscreen => "", }
-        / End Vimeo Example
-      / End Video Icon
-/ End Most Quality Solution
+        / End Youtube video
+      / End Video
+/ End Video section
 
 %hr.g-brd-gray-light-v4.my-0/
 
@@ -159,102 +159,6 @@ title: Top
 
 = partial "partials/project_list"
 
-/ Our Environment
-%section.g-py-100
-  .container
-    .row
-      / Carousel
-      .col-lg-6.g-mb-50.g-mb-0--lg
-        #carouselCus1.js-carousel.text-center.g-mb-20.slick-initialized.slick-slider{"data-arrow-left-classes" => "fa fa-angle-left g-left-0 rounded-right", "data-arrow-right-classes" => "fa fa-angle-right g-right-0 rounded-left", "data-arrows-classes" => "u-arrow-v1 g-absolute-centered--y g-width-50 g-height-50 g-font-size-20 g-bg-white g-color-gray-dark-v5 g-color-primary--hover g-mt-minus-10", "data-infinite" => "true", "data-lazy-load" => "progressive", "data-nav-for" => "#carouselCus2"}
-          .js-prev.u-arrow-v1.g-absolute-centered--y.g-width-50.g-height-50.g-font-size-20.g-bg-white.g-color-gray-dark-v5.g-color-primary--hover.g-mt-minus-10.fa.fa-angle-left.g-left-0.rounded-right.slick-arrow{:style => ""}
-          .slick-list.draggable
-            .slick-track{:style => "opacity: 1; width: 5940px; transform: translate3d(-540px, 0px, 0px);"}
-              .js-slide.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "-1", :style => "width: 540px;", :tabindex => "-1"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img7.jpg", :tabindex => "-1", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img7.jpg"}/
-              .js-slide.slick-slide.slick-current.slick-active{"aria-hidden" => "false", "data-slick-index" => "0", :style => "width: 540px; height: auto;", :tabindex => "0"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img6.jpg", :tabindex => "0", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img6.jpg"}/
-              .js-slide.slick-slide{"aria-hidden" => "true", "data-slick-index" => "1", :style => "width: 540px; height: auto;", :tabindex => "-1"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img3.jpg", :tabindex => "-1", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img3.jpg"}/
-              .js-slide.slick-slide{"aria-hidden" => "true", "data-slick-index" => "2", :style => "width: 540px; height: auto;", :tabindex => "-1"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img4.jpg", :tabindex => "-1", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img4.jpg"}/
-              .js-slide.slick-slide{"aria-hidden" => "true", "data-slick-index" => "3", :style => "width: 540px; height: auto;", :tabindex => "-1"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img5.jpg", :tabindex => "-1", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img5.jpg"}/
-              .js-slide.slick-slide{"aria-hidden" => "true", "data-slick-index" => "4", :style => "width: 540px; height: auto;", :tabindex => "-1"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img7.jpg", :tabindex => "-1", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img7.jpg"}/
-              .js-slide.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "5", :style => "width: 540px;", :tabindex => "-1"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img6.jpg", :tabindex => "-1", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img6.jpg"}/
-              .js-slide.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "6", :style => "width: 540px;", :tabindex => "-1"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img3.jpg", :tabindex => "-1", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img3.jpg"}/
-              .js-slide.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "7", :style => "width: 540px;", :tabindex => "-1"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img4.jpg", :tabindex => "-1", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img4.jpg"}/
-              .js-slide.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "8", :style => "width: 540px;", :tabindex => "-1"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img5.jpg", :tabindex => "-1", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img5.jpg"}/
-              .js-slide.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "9", :style => "width: 540px;", :tabindex => "-1"}
-                %a.js-fancybox.d-block.g-pos-rel{"data-blur-bg" => "true", "data-close-effect" => "bounceOutDown", "data-close-speed" => "1000", "data-open-effect" => "bounceInDown", "data-open-speed" => "1000", "data-rel" => "lightbox-gallery--08-1", :href => "/assets/images/img-temp/600x450/img7.jpg", :tabindex => "-1", :title => "Lightbox Gallery"}
-                  %img.img-fluid.w-100.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img7.jpg"}/
-          .js-next.u-arrow-v1.g-absolute-centered--y.g-width-50.g-height-50.g-font-size-20.g-bg-white.g-color-gray-dark-v5.g-color-primary--hover.g-mt-minus-10.fa.fa-angle-right.g-right-0.rounded-left.slick-arrow{:style => ""}
-        #carouselCus2.js-carousel.text-center.u-carousel-v3.g-mx-minus-10.slick-initialized.slick-slider{"data-center-mode" => "true", "data-infinite" => "true", "data-is-thumbs" => "true", "data-lazy-load" => "progressive", "data-nav-for" => "#carouselCus1", "data-slides-show" => "4"}
-          .slick-list.draggable{:style => "padding: 0px;"}
-            .slick-track{:style => "opacity: 1; width: 2100px; transform: translate3d(-420px, 0px, 0px);"}
-              .js-slide.g-px-10.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "-5", :style => "width: 140px;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img6.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "-4", :style => "width: 140px;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img3.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "-3", :style => "width: 140px;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img4.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "-2", :style => "width: 140px;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img5.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-cloned.slick-active{"aria-hidden" => "false", "data-slick-index" => "-1", :style => "width: 140px;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img7.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-current.slick-active.slick-center{"aria-hidden" => "false", "data-slick-index" => "0", :style => "width: 140px; height: auto;", :tabindex => "0"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img6.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-active{"aria-hidden" => "false", "data-slick-index" => "1", :style => "width: 140px; height: auto;", :tabindex => "0"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img3.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-active{"aria-hidden" => "false", "data-slick-index" => "2", :style => "width: 140px; height: auto;", :tabindex => "0"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img4.jpg"}/
-              .js-slide.g-px-10.slick-slide{"aria-hidden" => "true", "data-slick-index" => "3", :style => "width: 140px; height: auto;", :tabindex => "0"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img5.jpg"}/
-              .js-slide.g-px-10.slick-slide{"aria-hidden" => "true", "data-slick-index" => "4", :style => "width: 140px; height: auto;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img7.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-cloned.slick-center{"aria-hidden" => "true", "data-slick-index" => "5", :style => "width: 140px;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img6.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "6", :style => "width: 140px;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img3.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "7", :style => "width: 140px;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img4.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "8", :style => "width: 140px;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img5.jpg"}/
-              .js-slide.g-px-10.slick-slide.slick-cloned{"aria-hidden" => "true", "data-slick-index" => "9", :style => "width: 140px;", :tabindex => "-1"}
-                %img.img-fluid.g-cursor-pointer.rounded{:alt => "Image description", :src => "/assets/images/img-temp/600x450/img7.jpg"}/
-      / End Carousel
-      / Section Content
-      .col-lg-6.align-self-center.g-pl-30--lg
-        %header.g-mb-30
-          .u-heading-v2-3--bottom.g-brd-primary.g-mb-30
-            %h2.h4.u-heading-v2__title.g-color-gray-dark-v2.g-font-weight-600.text-uppercase Our Environment
-          %p.g-font-size-16
-            Unify
-            %strong creative
-            technology company providing key digital services. Focused on helping our clients to build a
-            %strong successful
-            business on web and mobile.
-        .g-mb-30
-          %p There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-          %p Passages are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-        %a.btn.btn-xl.u-btn-primary.text-uppercase.g-font-weight-600.g-font-size-12.rounded.g-mr-15.g-mb-10.g-mb-0--sm{:href => "#!"} Check It Now
-        %small.d-block.d-sm-inline-block.g-color-gray-dark-v5.g-font-size-12 *Sponsored by Unify team in Htmlstream.
-      / End Section Content
-/ End Our Environment
 / Counters
 %section.g-brd-top.g-brd-bottom.g-brd-gray-light-v4.g-pt-50
   .container
