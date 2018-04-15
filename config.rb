@@ -1,7 +1,10 @@
+
 activate :directory_indexes
 
 set :relative_links, true
 set :haml, { format: :html5 }
+
+config[:timezone_offset] = '+0900'
 
 # Disable Haml warnings
 Haml::TempleEngine.disable_option_validator!
@@ -56,4 +59,24 @@ after_build do |builder|
   FileUtils.cp_r 'lib/vendor', config[:build_dir]
 end
 
+# custom helpers
+helpers do
+  # show localized date
+  def local_datetime(datestring)
+    dt = DateTime.parse(datestring)
+    offset = config[:timezone_offset] || '+0900'
+    dt.new_offset(offset).strftime("%Y年%m月%d日")
+  end
+  def event_time_from_to(event)
+    offset = config[:timezone_offset] || '+0900'
+    start_time = DateTime.parse(event.event_start).new_offset(offset)
+    end_time = DateTime.parse(event.event_end).new_offset(offset)
+    # if the day is same, show time only
+    if (start_time.year == end_time.year && start_time.mon == end_time.mon && start_time.mday == end_time.mday)
+      start_time.strftime("%Y年%m月%d日 %H:%M") + "〜" + end_time.strftime("%H:%M")
+    else
+      start_time.strftime("%Y年%m月%d日 %H:%M") + "〜" + end_time.strftime("%Y年%m月%d日 %H:%M")
+    end
+  end
+end
 activate :relative_assets
