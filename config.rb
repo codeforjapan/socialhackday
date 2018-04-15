@@ -5,6 +5,8 @@ set :relative_links, true
 set :haml, { format: :html5 }
 
 config[:timezone_offset] = '+0900'
+set :site_name, 'Social Hack Day'
+set :site_title, 'Social Hack Day'
 
 # Disable Haml warnings
 Haml::TempleEngine.disable_option_validator!
