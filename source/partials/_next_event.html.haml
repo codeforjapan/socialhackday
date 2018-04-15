@@ -3,17 +3,24 @@
     %header.g-mb-10
       .u-heading-v2-3--bottom.g-brd-white
         %h2.h4.u-heading-v2__title.g-color-gray-dark-v2.g-font-weight-600.text-uppercase 今後のイベント
+    - if data.events.count == 0
+      .row.g-brd-bottom.g-brd-1.g-brd-white.g-mb-10.g-pb-10
+        .col-lg-3.align-self-lg-center 直近で予定されているイベントはありません。
     - data.events.each do |e|
       - if (DateTime.parse(e.event_start) > DateTime.now())
         .row.g-brd-bottom.g-brd-1.g-brd-white.g-mb-10.g-pb-10
           .col-lg-3.align-self-lg-center
             - if e.event_image.blank?
-              %img.img-fluid.w-100.g-mb-30.g-mb-0--lg{:alt => "No Image", :src => "/assets/images/logo.png"}/
+              %a{:href=> "#{e.entry_page}", :target => "_blank"}
+                %img.img-fluid.w-100.g-mb-30.g-mb-0--lg{:alt => "No Image", :src => "/assets/images/logo.png"}/
             - else
-              %img.img-fluid.w-100.g-mb-30.g-mb-0--lg{:alt => "#{e.event_name}", :src => "#{e.event_image}"}/
+              %a{:href=> "#{e.entry_page}", :target => "_blank"}
+                %img.img-fluid.w-100.g-mb-30.g-mb-0--lg{:alt => "#{e.event_name}", :src => "#{e.event_image}"}/
           .col-lg-7.align-self-lg-center
             %p.lead.font-weight-bold #{event_time_from_to(e)}
-            %h2.text-uppercase #{e.event_name}
+            %a.g-color-white{:href=> "#{e.entry_page}", :target => "_blank"}
+              %h2.text-uppercase #{e.event_name}
+            %p.font-weight-bold [#{e.location}] 会場：#{e.venue}
             %p.g-mb-20.g-mb-0--lg #{e.description}
           .col-lg-2.align-self-lg-center
-            %a.btn.u-btn-darkgray.rounded-0.g-py-12.g-px-30{:href => "#{e.entry_page}"} 参加する
+            %a.btn.u-btn-darkgray.rounded-0.g-py-12.g-px-30{:href => "#{e.entry_page}", :target => "_blank"} 参加する
