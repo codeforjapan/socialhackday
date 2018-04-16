@@ -10,7 +10,7 @@ fi
 
 # Set up Ruby dependencies via Bundler
 echo "Installing Ruby gem dependencies..."
-bundle install
+bundle install --path=vendor
 
 # Install node packages
 echo "Installing Node package dependencies..."

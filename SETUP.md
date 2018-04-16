@@ -74,10 +74,6 @@ gem install middleman
 % cd website
 % bin/setup
 ...
-% npm install
-...
-% bundle install --path=vendor
-...
 ```
 
 ## test
