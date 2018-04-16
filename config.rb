@@ -78,5 +78,8 @@ helpers do
       start_time.strftime("%Y年%m月%d日 %H:%M") + "〜" + end_time.strftime("%Y年%m月%d日 %H:%M")
     end
   end
+  def simple_format_with_span(text)
+    simple_format(text, :tag => :span)
+  end
 end
 activate :relative_assets
