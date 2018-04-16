@@ -1,28 +1,52 @@
 / Footer
-%footer.text-center.text-md-left.g-color-gray-dark-v4.g-bg-gray-dark-v2.g-py-25
+#contacts-section.g-bg-black-opacity-0_9.g-color-white-opacity-0_8.g-py-60
   .container
     .row
-      .col-md-6.d-flex.align-items-center.g-mb-10.g-mb-0--md
-        %p.w-100.g-color-gray-light-v8.mb-0
-          © 2017 All right reserved. Development by
-          %a.g-font-weight-700.g-color-white{:href => "#!"} HTML Stream
-      .col-md-6
-        %ul.list-inline.float-md-right.mb-0
-          %li.list-inline-item.g-mr-10
-            %a.u-icon-v3.g-width-28.g-height-28.g-font-size-14.g-color-gray-light-v9.g-color-white--hover.g-brd-gray-dark-v2.g-bg-gray-dark-v2.g-bg-primary--hover.g-rounded-4.g-transition-0_2.g-transition--ease-in{:href => "#!"}
-              %i.fa.fa-twitter
-          %li.list-inline-item.g-mr-10
-            %a.u-icon-v3.g-width-28.g-height-28.g-font-size-14.g-color-gray-light-v9.g-color-white--hover.g-brd-gray-dark-v2.g-bg-gray-dark-v2.g-bg-primary--hover.g-rounded-4.g-transition-0_2.g-transition--ease-in{:href => "#!"}
-              %i.fa.fa-pinterest
-          %li.list-inline-item.g-mr-10
-            %a.u-icon-v3.g-width-28.g-height-28.g-font-size-14.g-color-gray-light-v9.g-color-white--hover.g-brd-gray-dark-v2.g-bg-gray-dark-v2.g-bg-primary--hover.g-rounded-4.g-transition-0_2.g-transition--ease-in{:href => "#!"}
+      / Footer Content
+      .col-lg-3.col-md-6.g-mb-40.g-mb-0--lg
+        .u-heading-v2-3--bottom.g-brd-white-opacity-0_8.g-mb-20
+          %h2.u-heading-v2__title.h6.text-uppercase.mb-0 About Us
+        %p
+          Social Hack Day は、
+          %a{:href=>"http://www.code4japan.org/", :target=>"_blank"} Code for Japan
+          が運営していますが、開催は誰でも可能です。企画する方は、Code for Japan にご連絡ください。
+      / End Footer Content
+      / Footer Content
+      .col-lg-3.col-md-6
+        .u-heading-v2-3--bottom.g-brd-white-opacity-0_8.g-mb-20
+          %h2.u-heading-v2__title.h6.text-uppercase.mb-0 Our Contacts
+        %address.g-bg-no-repeat.g-font-size-12.mb-0{:style => "background-image: url(../../assets/img/maps/map2.png);"}
+          / Email and Website
+          .d-flex.g-mb-20
+            .g-mr-10
+              %span.u-icon-v3.u-icon-size--xs.g-bg-white-opacity-0_1.g-color-white-opacity-0_6
+                %i.fa.fa-globe
+            %p.mb-0
+              %a.g-color-white-opacity-0_8.g-color-white--hover{:href => "mailto:info@code4japan.org"} info@code4japan.org
+              %br/
+              %a.g-color-white-opacity-0_8.g-color-white--hover{:href => "http://www.code4japan.org/aboutus/"} www.code4japan.org
+          / End Email and Website
+      / End Footer Content
+/ End Footer
+/ Copyright Footer
+%footer.g-bg-gray-dark-v1.g-color-white-opacity-0_8.g-py-20
+  .container
+    .row
+      .col-md-8.text-center.text-md-left.g-mb-10.g-mb-0--md
+        .d-lg-flex
+          %small.d-block.g-font-size-default.g-mr-10.g-mb-10.g-mb-0--md 2018 © Code for Japan All Rights Reserved.
+      .col-md-4.align-self-center
+        %ul.list-inline.text-center.text-md-right.mb-0
+          %li.list-inline-item.g-mx-10{"data-original-title" => "Facebook", "data-placement" => "top", "data-toggle" => "tooltip", :title => "Facebook"}
+            %a.g-color-white-opacity-0_5.g-color-white--hover{:href => "https://www.facebook.com/groups/210356873071690/", :target=>"_blank"}
               %i.fa.fa-facebook
-          %li.list-inline-item
-            %a.u-icon-v3.g-width-28.g-height-28.g-font-size-14.g-color-gray-light-v9.g-color-white--hover.g-brd-gray-dark-v2.g-bg-gray-dark-v2.g-bg-primary--hover.g-rounded-4.g-transition-0_2.g-transition--ease-in{:href => "#!"}
-              %i.fa.fa-instagram
-          %li.list-inline-item
-            %a.u-icon-v3.g-width-28.g-height-28.g-font-size-14.g-color-gray-light-v9.g-color-white--hover.g-brd-gray-dark-v2.g-bg-gray-dark-v2.g-bg-primary--hover.g-rounded-4.g-transition-0_2.g-transition--ease-in{:href => "#!"}
-              %i.fa.fa-linkedin
+/ End Copyright Footer
+%a.js-go-to.u-go-to-v1.animated.js-animation-was-fired.zoomIn{"data-compensation" => "#js-header", "data-offset-top" => "400", "data-position" => "{\r\n     \"bottom\": 15,\r\n     \"right\": 15\r\n   }", "data-show-effect" => "zoomIn", "data-type" => "fixed", :href => "#!", :style => "display: inline-block; position: fixed; bottom: 15px; right: 15px;"}
+  %i.hs-icon.hs-icon-arrow-top
+
+%a.js-go-to.u-go-to-v1{"data-compensation" => "#js-header", "data-offset-top" => "400", "data-position" => "{\r\n     \"bottom\": 15,\r\n     \"right\": 15\r\n   }", "data-show-effect" => "zoomIn", "data-type" => "fixed", :href => "#!"}
+  %i.hs-icon.hs-icon-arrow-top
+
 / End Footer
 
 -# = Unify Javascript

@@ -57,3 +57,7 @@ build-iPhoneSimulator/
 .sass-cache
 build/
 .tmp
+
+## tags
+.tags
+.tags1
