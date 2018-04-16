@@ -3,7 +3,7 @@
   .container
     .row
       / Footer Content
-      .col-lg-3.col-md-6.g-mb-40.g-mb-0--lg
+      .col-lg-9.col-md-6.g-mb-40.g-mb-0--lg
         .u-heading-v2-3--bottom.g-brd-white-opacity-0_8.g-mb-20
           %h2.u-heading-v2__title.h6.text-uppercase.mb-0 About Us
         %p
@@ -35,11 +35,6 @@
       .col-md-8.text-center.text-md-left.g-mb-10.g-mb-0--md
         .d-lg-flex
           %small.d-block.g-font-size-default.g-mr-10.g-mb-10.g-mb-0--md 2018 © Code for Japan All Rights Reserved.
-      .col-md-4.align-self-center
-        %ul.list-inline.text-center.text-md-right.mb-0
-          %li.list-inline-item.g-mx-10{"data-original-title" => "Facebook", "data-placement" => "top", "data-toggle" => "tooltip", :title => "Facebook"}
-            %a.g-color-white-opacity-0_5.g-color-white--hover{:href => "https://www.facebook.com/groups/210356873071690/", :target=>"_blank"}
-              %i.fa.fa-facebook
 / End Copyright Footer
 %a.js-go-to.u-go-to-v1.animated.js-animation-was-fired.zoomIn{"data-compensation" => "#js-header", "data-offset-top" => "400", "data-position" => "{\r\n     \"bottom\": 15,\r\n     \"right\": 15\r\n   }", "data-show-effect" => "zoomIn", "data-type" => "fixed", :href => "#!", :style => "display: inline-block; position: fixed; bottom: 15px; right: 15px;"}
   %i.hs-icon.hs-icon-arrow-top
@@ -76,35 +71,13 @@
 = javascript_include_tag "assets/javascripts/unify/components/hs.go-to.js"
 
 :javascript
-  // initialization of google map
-  function initMap() {
-    $.HSCore.components.HSGMap.init('.js-g-map');
-  }
-
   $(document).on('ready', function () {
-    // initialization of carousel
-    $.HSCore.components.HSCarousel.init('.js-carousel');
 
     // initialization of header
     $.HSCore.components.HSHeader.init($('#js-header'));
     $.HSCore.helpers.HSHamburgers.init('.hamburger');
 
-    // initialization of custom select
-    $.HSCore.components.HSSelect.init('.js-custom-select');
-
     // initialization of go to section
     $.HSCore.components.HSGoTo.init('.js-go-to');
 
-    // initialization of chart pies
-    var items = $.HSCore.components.HSChartPie.init('.js-pie');
-  });
-
-  $(window).on('load', function() {
-    // initialization of HSScrollNav
-    $.HSCore.components.HSScrollNav.init($('#js-scroll-nav'), {
-      duration: 700
-    });
-
-    // initialization of cubeportfolio
-    $.HSCore.components.HSCubeportfolio.init('.cbp');
   });

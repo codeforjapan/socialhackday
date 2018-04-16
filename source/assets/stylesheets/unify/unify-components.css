@@ -22242,7 +22242,7 @@ pre[class*="language-"] .toolbar-item a {
   transition-timing-function: ease-in; }
 
 .js-carousel {
-  background: url(../../assets/img/preloaders/preloader-black.svg) no-repeat 50% 50%; }
+  background: url(../../../assets/img/preloaders/preloader-black.svg) no-repeat 50% 50%; }
 
 .js-carousel .js-next,
 .js-carousel .js-prev {
