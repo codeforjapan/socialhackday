@@ -67,6 +67,7 @@ helpers do
     offset = config[:timezone_offset] || '+0900'
     dt.new_offset(offset).strftime("%Y年%m月%d日")
   end
+  # return event time of start and end
   def event_time_from_to(event)
     offset = config[:timezone_offset] || '+0900'
     start_time = DateTime.parse(event.event_start).new_offset(offset)
@@ -78,8 +79,30 @@ helpers do
       start_time.strftime("%Y年%m月%d日 %H:%M") + "〜" + end_time.strftime("%Y年%m月%d日 %H:%M")
     end
   end
+  # return <span> instead of <div> for simple_format
   def simple_format_with_span(text)
     simple_format(text, :tag => :span)
+  end
+  # return numbers of events
+  def get_statistics(events)
+    ret = {
+      :spent_time => 0,
+      :count_of_event => 0,
+      :attendees => 0,
+      :total_spent_time => 0,
+      :number_of_projects => 0
+    }
+    events.each do |e|
+      start_time = DateTime.parse(e.event_start)
+      end_time = DateTime.parse(e.event_end)
+      next if end_time > DateTime.now()
+      ret[:count_of_event] += 1
+      ret[:spent_time] += ((end_time - start_time) * 24).to_i
+      ret[:attendees] += e.attendees.to_i
+      ret[:number_of_projects] += e.number_of_projects.to_i
+      ret[:total_spent_time] += (e.attendees.to_i * ((end_time - start_time) * 24)).to_i
+    end
+    ret
   end
 end
 activate :relative_assets

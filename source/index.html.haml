@@ -18,7 +18,7 @@ title: Top
       %h2.h4.d-inline-block.g-brd-bottom.g-brd-2.g-brd-white.g-color-white.g-font-weight-600.text-uppercase.g-pb-5 Hack the social issues
       %h3.g-color-white.g-font-weight-700.g-font-size-38.g-font-size-50--md.text-uppercase.g-mb-38 プロジェクトを持ち込んでみんなで作ろう
       %a.btn.btn-lg.u-btn-outline-white.g-font-weight-600.g-font-size-13.text-uppercase.g-rounded-50.g-px-25.g-py-15.mx-2{:href => "#projects"} プロジェクトをみる
-      %a.btn.btn-lg.u-btn-primary.g-font-weight-600.g-font-size-13.text-uppercase.g-rounded-50.g-px-25.g-py-15.mx-2{:href => "#events"} 参加する
+      %a.btn.btn-lg.u-btn-primary.g-font-weight-600.g-font-size-13.text-uppercase.g-rounded-50.g-px-25.g-py-15.mx-2{:href => "#event"} 参加する
   / End Promo Block Content
 / End Promo Block
 / Icon Blocks
@@ -159,20 +159,21 @@ title: Top
 
 = partial "partials/project_list"
 
+- statistics = get_statistics(data.events)
 / Counters
 %section.g-brd-top.g-brd-bottom.g-brd-gray-light-v4.g-pt-50
   .container
     .row.text-center.text-uppercase
       .col-lg-3.col-sm-6.g-brd-right.g-brd-gray-light-v4.g-mb-50
-        .js-counter.g-color-gray-dark-v2.g-font-size-35.g-font-weight-300.g-mb-7 52147
-        %h4.h6.g-color-gray-dark-v5 Code Lines
+        .js-counter.g-color-gray-dark-v2.g-font-size-35.g-font-weight-300.g-mb-7 #{statistics[:count_of_event]}
+        %h4.h6.g-color-gray-dark-v5 Events
       .col-lg-3.col-sm-6.g-brd-right--lg.g-brd-gray-light-v4.g-mb-50
-        .js-counter.g-color-gray-dark-v2.g-font-size-35.g-font-weight-300.g-mb-7 24583
+        .js-counter.g-color-gray-dark-v2.g-font-size-35.g-font-weight-300.g-mb-7 #{statistics[:number_of_projects]}
         %h4.h6.g-color-gray-dark-v5 Projects
       .col-lg-3.col-sm-6.g-brd-right.g-brd-gray-light-v4.g-mb-50
-        .js-counter.g-color-gray-dark-v2.g-font-size-35.g-font-weight-300.g-mb-7 7348
-        %h4.h6.g-color-gray-dark-v5 Working Hours
+        .js-counter.g-color-gray-dark-v2.g-font-size-35.g-font-weight-300.g-mb-7 #{statistics[:attendees]}
+        %h4.h6.g-color-gray-dark-v5 Attendees
       .col-lg-3.col-sm-6.g-mb-50
-        .js-counter.g-color-gray-dark-v2.g-font-size-35.g-font-weight-300.g-mb-7 87904
-        %h4.h6.g-color-gray-dark-v5 Job Offers
+        .js-counter.g-color-gray-dark-v2.g-font-size-35.g-font-weight-300.g-mb-7 #{statistics[:total_spent_time]}
+        %h4.h6.g-color-gray-dark-v5 Working Hours
 / End Counters
