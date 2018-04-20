@@ -1,3 +1,4 @@
+- pindex = 1
 / Our Recent Projects
 %section#projects.g-py-100
   .container
@@ -8,13 +9,14 @@
     - data.projects.each_slice(3) do |group|
       .row
         - group.each do |p|
+          - pindex += 1
           - if p.status == 'Active'
             .col-lg-4.g-mb-30
               / Article
               %article.g-brd-around.g-brd-gray-light-v4.g-brd-top-2.g-brd-primary-top.rounded.g-pa-25
                 .u-heading-v2-6--bottom.g-mb-20
                   %h2.h3.u-heading-v2__title.g-font-weight-300.g-mb-0
-                    %a.u-link-v5.g-color-main.g-color-primary--hover{:href => "#modal1", "data-modal-target"=>"#modal1", "data-modal-effect"=>"fadein"} #{simple_format_with_span(p.project_name)}
+                    %a.u-link-v5.g-color-main.g-color-primary--hover{:href => "#modal#{pindex}", "data-modal-target"=>"#modal1", "data-modal-effect"=>"fadein"} #{simple_format_with_span(p.project_name)}
                 - unless p.cover_image_url.blank?
                   %img.g-pb-10.g-fullwidth{:src=>"#{strip_tags(p.cover_image_url)}"}
                 .g-font-size-16
@@ -27,15 +29,19 @@
                   %li.list-inline-item
                     Last update #{local_datetime(p.last_update)}
             / End Article
+- pindex = 1
+- data.projects.each do |group|
+  - pindex += 1
+  .text-left.g-max-width-600.g-bg-white.g-overflow-y-auto.g-pa-20{:style => "display: none;", :id => "modal#{pindex}"}
+    %button.close{:onclick => "Custombox.modal.close();", :type => "button"}
+      %i.hs-icon.hs-icon-close
+    %h4.g-mb-20 Modal title #{pindex}
+    %p
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+      specimen book.
+    %p
+      It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+      recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-#modal1.text-left.g-max-width-600.g-bg-white.g-overflow-y-auto.g-pa-20{:style => "display: none;"}
-  %button.close{:onclick => "Custombox.modal.close();", :type => "button"}
-    %i.hs-icon.hs-icon-close
-  %h4.g-mb-20 Modal title
-  %p
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-    specimen book.
-  %p
-    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
 / End Our Recent Projects
