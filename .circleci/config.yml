@@ -44,12 +44,17 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Build
-      - run: bundle exec middleman s3_sync --build
+      - run:
+          name: build phase
+          command: |
+            bundle exec middleman build --environment="production" --build-dir=public --clean
+
       # Clear Cloudfront save_cache
       - run:
           name: clear Cloudfront cache
           command: |
             aws configure set preview.cloudfront true
+            aws s3 sync --sse --delete public s3://$AWS_BUCKET/
             aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths '/*'
           environment:
             CF_DISTRIBUTION_ID: E2MMTLBMXPAMW5
