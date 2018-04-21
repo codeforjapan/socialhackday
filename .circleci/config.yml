@@ -44,12 +44,12 @@ jobs:
       - run: bundle exec middleman s3_sync --build
       # Clear Cloudfront save_cache
       - run:
-        name: clear Cloudfront cache
-        command: |
-          aws configure set preview.cloudfront true
-          aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths '/*'
-        environment:
-          CF_DISTRIBUTION_ID: E2MMTLBMXPAMW5
+          name: clear Cloudfront cache
+          command: |
+            aws configure set preview.cloudfront true
+            aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths '/*'
+          environment:
+            CF_DISTRIBUTION_ID: E2MMTLBMXPAMW5
 
 workflows:
   version: 2
