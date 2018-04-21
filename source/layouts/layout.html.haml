@@ -21,6 +21,9 @@
     %script{:src => "vendor/fancybox/jquery.fancybox.min.js"}
     %script{:src => "vendor/slick-carousel/slick/slick.js"}
     %script{:src => "vendor/typedjs/typed.min.js"}
+    %script{:src => "vendor/chosen/chosen.jquery.js"}
+    %script{:src => "vendor/custombox/custombox.min.js"}
+
     / JS Unify
     %script{:src => "assets/javascripts/unify/hs.core.js"}
     %script{:src => "assets/javascripts/unify/components/hs.header.js"}
@@ -30,36 +33,21 @@
     %script{:src => "assets/javascripts/unify/components/hs.carousel.js"}
     %script{:src => "assets/javascripts/unify/components/text-animation/hs.text-slideshow.js"}
     %script{:src => "assets/javascripts/unify/components/hs.go-to.js"}
+    %script{:src => "assets/javascripts/unify/components/hs.modal-window.js"}
+    %script{:src => "assets/javascripts/unify/components/hs.carousel.js"}
 
     / JS Plugins Init.
     :javascript
       $(document).on('ready', function () {
-          // initialization of carousel
           $.HSCore.components.HSCarousel.init('.js-carousel');
-
-          // initialization of tabs
-          $.HSCore.components.HSTabs.init('[role="tablist"]');
-
-          // initialization of popups
-          $.HSCore.components.HSPopup.init('.js-fancybox');
-
           // initialization of go to
           $.HSCore.components.HSGoTo.init('.js-go-to');
 
-          // initialization of text animation (typing)
-          $(".u-text-animation.u-text-animation--typing").typed({
-            strings: [
-              "an awesome template",
-              "perfect template",
-              "just like a boss"
-            ],
-            typeSpeed: 60,
-            loop: true,
-            backDelay: 1500
-          });
+          $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+
         });
 
-        $(window).on('load', function () {
+      $(window).on('load', function () {
           // initialization of header
           $.HSCore.components.HSHeader.init($('#js-header'));
           $.HSCore.helpers.HSHamburgers.init('.hamburger');
@@ -72,7 +60,7 @@
           });
         });
 
-        $(window).on('resize', function () {
+      $(window).on('resize', function () {
           setTimeout(function () {
             $.HSCore.components.HSTabs.init('[role="tablist"]');
           }, 200);
