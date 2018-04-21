@@ -8,8 +8,6 @@ jobs:
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.4.1-node-browsers
-        environment:
-          CF_DISTRIBUTION_ID: E2MMTLBMXPAMW5
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -45,9 +43,13 @@ jobs:
       # Build
       - run: bundle exec middleman s3_sync --build
       # Clear Cloudfront save_cache
-      - run: aws configure set preview.cloudfront true
-      - run: aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths '/*'
-
+      - run:
+        name: clear Cloudfront cache
+        command: |
+          aws configure set preview.cloudfront true
+          aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths '/*'
+        environment:
+          CF_DISTRIBUTION_ID: E2MMTLBMXPAMW5
 
 workflows:
   version: 2
