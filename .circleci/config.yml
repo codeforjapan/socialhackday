@@ -30,6 +30,10 @@ jobs:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
+            apt-get update -yqqq
+            curl -sL https://deb.nodesource.com/setup_8.x | bash -
+            apt-get install -y nodejs build-essential
+            bundle install --path vendor && npm install
 
       - save_cache:
           paths:
