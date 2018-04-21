@@ -46,6 +46,8 @@ jobs:
       - run:
           name: clear Cloudfront cache
           command: |
+            sudo apt-get install python-pip python-dev jq
+            sudo pip install awscli
             aws configure set preview.cloudfront true
             aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths '/*'
           environment:
