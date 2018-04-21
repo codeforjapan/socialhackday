@@ -46,7 +46,10 @@ jobs:
       - run:
           name: clear Cloudfront cache
           command: |
-            sudo apt update && sudo apt install awscli, python-pip
+            sudo apt-get -y -qq install python3.4-dev
+            curl -O https://bootstrap.pypa.io/get-pip.py
+            python3.4 get-pip.py --user
+            pip install awscli --upgrade --user
             aws configure set preview.cloudfront true
             aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths '/*'
           environment:
