@@ -41,7 +41,7 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Build
-      - run: bundle exec middleman s3_sync
+      - run: bundle exec middleman s3_sync --build
 
 workflows:
   version: 2
