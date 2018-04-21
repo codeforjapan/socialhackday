@@ -106,3 +106,9 @@ helpers do
   end
 end
 activate :relative_assets
+
+
+# deployment
+activate :s3_sync do |s3_sync|
+  s3_sync.region                = 'ap-northeast-1'
+end
