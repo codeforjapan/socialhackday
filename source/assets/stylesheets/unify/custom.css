@@ -8,3 +8,6 @@
 .g-fullwidth {
   width: 100%;
 }
+.min-80rem {
+  min-width: 300px;
+}
