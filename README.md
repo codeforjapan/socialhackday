@@ -36,9 +36,11 @@ There are two types of way to see the HTML.
 Deployment
 ----------
 
-- Updating `master` branch will automatically deploy them to the production server.
+Updating `master` branch will automatically deploy them to the production server.
 
 **Do not directly commit to those branches. Use pull requests**
+
+see [DEPLOY.md](DEPLOY.md) for more details
 
 Development
 -----------
