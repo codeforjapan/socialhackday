@@ -2,8 +2,8 @@
 %html{ :lang => "ja" }
   %head
     = partial "partials/head_contents"
-    = google_tag_manager
   %body{ :class => "#{page_classes}" }
+    = google_tag_manager
     %main
       = partial "partials/menu"
       = yield
