@@ -11,3 +11,10 @@
 .min-80rem {
   min-width: 300px;
 }
+.project_header_ {
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  margin-top:25px;
+  z-index: 10;
+}

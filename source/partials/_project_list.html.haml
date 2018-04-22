@@ -33,10 +33,11 @@
 - data.projects.each do |p|
   - if p.status == 'Active'
     .text-left.g-max-width-645.g-bg-white.g-overflow-y-auto.g-pa-20.g-max-height-70vh{:style => "display: none;", :id => "modal#{pindex}"}
-      %button.close{:onclick => "Custombox.modal.close();", :type => "button"}
-        %i.hs-icon.hs-icon-close
-      .u-heading-v2-3--bottom.g-brd-primary.g-mb-20
-        %h4.h4.u-heading-v2__title.g-color-gray-dark-v2.g-font-weight-600 #{simple_format_with_span(p.project_name)}
+      .project_header
+        %button.close{:onclick => "Custombox.modal.close();", :type => "button"}
+          %i.hs-icon.hs-icon-close
+        .u-heading-v2-3--bottom.g-brd-primary.g-mb-20
+          %h4.h4.u-heading-v2__title.g-color-gray-dark-v2.g-font-weight-600 #{simple_format_with_span(p.project_name)}
       .project_image
         - unless p.cover_image_url.blank?
           %img.g-pb-10.g-fullwidth{:src=>"#{strip_tags(p.cover_image_url)}"}
