@@ -114,6 +114,7 @@ activate :google_tag_manager do |gtm|
 end
 
 # deployment
+# AWS_BUCKET and AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are declared on the CircleCI settings.
 activate :s3_sync do |s3_sync|
   s3_sync.region                = 'ap-northeast-1'
 end
