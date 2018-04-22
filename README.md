@@ -1,6 +1,8 @@
 SocialHackDay
 ==========
 
+[![CircleCI](https://circleci.com/gh/codeforjapan/socialhackday.svg?style=svg)](https://circleci.com/gh/codeforjapan/socialhackday)
+
 This is a source code for the front end web service of SocialHackDay
 
 Features
@@ -34,15 +36,15 @@ There are two types of way to see the HTML.
 Deployment
 ----------
 
-- Updating `develop` branch will automatically deploy them to the staging server.
 - Updating `master` branch will automatically deploy them to the production server.
 
 **Do not directly commit to those branches. Use pull requests**
 
 Development
 -----------
-(1) Create new branch
-(2) Modify sources in the source directory.
+(1) [SETUP](SETUP.md) environment
+(2) Create new branch
+(3) Modify sources in the source directory.
 
 ### directory structure
 | Directories  | Usage  |
@@ -64,12 +66,12 @@ Development
 | spec | middleman spec (don't use) |
 | vendor | will be created after bundle install |
 
-(3) Run `bundle exec middleman start`
+(4) Run `bundle exec middleman start`
 Check changes via launched browser.
 
-(4) Commit and push the branch to this repository.
+(5) Commit and push the branch to this repository.
 
-(5) Send a pull request.
+(6) Send a pull request.
 
 [middleman]: https://middlemanapp.com/
 [unify]: https://htmlstream.com/preview/unify-v2.5.1/all-demos.html#cbpf=.unify-main
