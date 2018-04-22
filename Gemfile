@@ -33,6 +33,9 @@ gem "haml_lint"
 # https://github.com/brigade/scss-lint
 gem "scss_lint"
 
+# https://github.com/rjocoleman/middleman-google-tag-manager
+gem 'middleman-google-tag-manager', '~> 1'
+
 group :development do
   gem "rspec", "~> 3.6"
   gem "capybara", "~> 2.15"

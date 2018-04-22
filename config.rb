@@ -107,6 +107,11 @@ helpers do
 end
 activate :relative_assets
 
+# Google Tag manager
+activate :google_tag_manager do |gtm|
+  gtm.container_id = 'GTM-NNVFPQZ' # required
+  gtm.development = false # Render tag in development environment
+end
 
 # deployment
 activate :s3_sync do |s3_sync|
