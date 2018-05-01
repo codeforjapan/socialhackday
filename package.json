@@ -23,7 +23,7 @@
   "devDependencies": {
     "bourbon": "^5.0.0-beta.8",
     "bourbon-neat": "^2.1.0",
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.24.1",
     "browserify": "^14.0.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
@@ -33,7 +33,7 @@
     "gulp-environments": "^0.1.2",
     "gulp-imagemin": "^3.2.0",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-sass": "^3.2.0",
+    "gulp-sass": "^3.2.1",
     "gulp-sizereport": "^1.2.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-strip-debug": "^1.1.0",
@@ -44,8 +44,9 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "hoek": "^5.0.3",
     "jquery": "^3.2.1",
-    "moment": "^2.18.1",
+    "moment": "^2.22.1",
     "webfontloader": "^1.6.27"
   },
   "engines": {
