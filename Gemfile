@@ -33,8 +33,15 @@ gem "haml_lint"
 # https://github.com/brigade/scss-lint
 gem "scss_lint"
 
+# https://github.com/rjocoleman/middleman-google-tag-manager
+gem 'middleman-google-tag-manager', '~> 1'
+
 group :development do
   gem "rspec", "~> 3.6"
   gem "capybara", "~> 2.15"
   gem "launchy", "~> 2.4"
 end
+
+# deployment
+gem 'middleman-s3_sync', '~> 4.0.1.rc.3'
+gem 'mime-types', '~> 3.0.0'
