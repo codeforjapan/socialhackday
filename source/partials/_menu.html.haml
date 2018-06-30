@@ -18,15 +18,15 @@
           %ul.navbar-nav.text-uppercase.g-pos-rel.g-font-weight-600.ml-auto
             / Info
             %li.nav-item.g-mx-10--lg.g-mx-15--xl
-              %a.nav-link.g-py-7.g-px-0{:href => "#about"} ソーシャルハックデーとは
+              %a.nav-link.g-py-7.g-px-0{:href => "/#about"} ソーシャルハックデーとは
             / End Info
             / Event
             %li.nav-item.g-mx-10--lg.g-mx-15--xl
-              %a.nav-link.g-py-7.g-px-0{:href => "#event"} 今後のイベント
+              %a.nav-link.g-py-7.g-px-0{:href => "/#event"} 今後のイベント
             / End Event
             / Project
             %li.nav-item.g-mx-10--lg.g-mx-15--xl
-              %a.nav-link.g-py-7.g-px-0{:href => "#projects"} 進行中プロジェクト
+              = link_to '進行中プロジェクト', 'projects.html', :class=>"nav-link g-py-7 g-px-0"
             / End Project
         / End Navigation
 / End Header
