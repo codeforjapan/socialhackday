@@ -1,5 +1,5 @@
 
-activate :directory_indexes
+# activate :directory_indexes
 
 set :relative_links, true
 set :haml, { format: :html5 }
