@@ -33,6 +33,11 @@ There are two types of way to see the HTML.
 2. build mode
   If you run `bundle exec middleman build` at root, you will find compiled HTML files in `./build` directory.
 
+DataSource
+----------
+
+Please edit [this sheet](https://docs.google.com/spreadsheets/d/18H2q-3b6uxvAJENm2aQmVcSph7vFpOvB49lxZ4ns1ak/edit#gid=0)
+
 Deployment
 ----------
 
