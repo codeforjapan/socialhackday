@@ -1,0 +1,33 @@
+---
+title: Events
+---
+/ Our Recent Projects
+%section#projects.g-py-100
+  .container
+    %header.g-mb-50
+      .u-heading-v2-3--bottom.g-brd-primary.g-mb-20
+        %h2.h4.u-heading-v2__title.g-color-gray-dark-v2.g-font-weight-600.text-uppercase 開催イベント
+      %p.g-font-size-16 これまでに開催されたイベントの一覧です。
+    - data.events.reverse_each do |e|
+      - if (DateTime.parse(e.event_start) <= DateTime.now())
+        .row.g-brd-bottom.g-brd-1.g-brd-white.g-mb-10.g-pb-10
+          .col-lg-3.align-self-lg-center
+            - if e.event_image.blank?
+              %a{:href=> "#{strip_tags(e.entry_page)}", :target => "_blank"}
+                %img.img-fluid.w-100.g-mb-30.g-mb-0--lg{:alt => "No Image", :src => "/assets/images/logo.png"}/
+            - else
+              %a{:href=> "#{strip_tags(e.entry_page)}", :target => "_blank"}
+                %img.img-fluid.w-100.g-mb-30.g-mb-0--lg{:alt => "#{strip_tags(e.event_name)}", :src => "#{strip_tags(e.event_image)}"}/
+          .col-lg-7.align-self-lg-center
+            %p.lead.font-weight-bold #{event_time_from_to(e)}
+            %a.g-color-white{:href=> "#{strip_tags(e.entry_page)}", :target => "_blank"}
+              %h2.text-uppercase #{simple_format_with_span(e.event_name)}
+            %p.font-weight-bold [#{simple_format_with_span(e.location)}] 会場：#{simple_format_with_span(e.venue)}
+            %p.g-mb-20.g-mb-0--lg #{simple_format_with_span(e.description)}
+            - if e.hackmd_url.present?
+              %p.g-mb-20.g-mb-0--lg
+                %span
+                  HackMD URL:
+                  %a{:href=> "#{strip_tags(e.hackmd_url)}", :target => "_blank"}
+                    = simple_format_with_span(e.hackmd_url)
+
