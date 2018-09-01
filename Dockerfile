@@ -7,6 +7,8 @@ RUN mkdir /usr/src/app
 
 WORKDIR /usr/src/app
 
+ENV RUBYOPT -EUTF-8
+
 COPY Gemfile /usr/src/app/Gemfile
 COPY Gemfile.lock /usr/src/app/Gemfile.lock
 RUN bundle install
