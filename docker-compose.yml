@@ -7,8 +7,12 @@ services:
      - "4567:4567"
      - "3000:3000"
      - "3001:3001"
+    volumes:
+      - ./build:/usr/src/app/build
+      - ./source:/usr/src/app/source
   build:
     image: "socialhackday:latest"
     command: ./build.sh
     volumes:
       - ./build:/usr/src/app/build
+      - ./source:/usr/src/app/source
