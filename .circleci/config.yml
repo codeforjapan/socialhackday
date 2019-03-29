@@ -39,6 +39,8 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-gem-{{ checksum "Gemfile.lock" }}
+
+      - save_cache:
           paths:
             - ./node_modules
           key: v1-dependencies-gem-{{ checksum "package-lock.json" }}
