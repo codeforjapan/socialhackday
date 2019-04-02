@@ -1,4 +1,4 @@
-FROM ruby:2.4
+FROM ruby:2.5
 
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
@@ -13,7 +13,7 @@ COPY Gemfile /usr/src/app/Gemfile
 COPY Gemfile.lock /usr/src/app/Gemfile.lock
 RUN bundle install
 
-ENV NODE_VERSION 9.11.1
+ENV NODE_VERSION 10.15.3
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
   && tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner \
