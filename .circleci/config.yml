@@ -31,7 +31,7 @@ jobs:
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
             sudo apt-get update -yqqq
-            sudo npm install
+            npm install
             sudo apt-get install python-pip python-dev build-essential
             sudo pip install awscli --upgrade
 
