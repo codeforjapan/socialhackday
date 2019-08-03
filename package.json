@@ -51,6 +51,12 @@
     "moment": "^2.24.0",
     "webfontloader": "^1.6.28"
   },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
   "engines": {
     "node": ">= 6.9.4"
   }
