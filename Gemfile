@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem "bundler-audit"
+
 # https://github.com/middleman/middleman#middleman---makes-developing-websites-simple
 gem "middleman", "~> 4.2"
 
@@ -16,7 +18,7 @@ gem 'middleman-data_source'
 # gem "middleman-blog", "~> 4.0", ">= 4.0.2"
 
 # https://github.com/sparklemotion/nokogiri
-gem "nokogiri", "~> 1.8"
+gem "nokogiri", ">= 1.8.5"
 
 # https://github.com/AndrewKvalheim/middleman-pry
 gem "middleman-pry", "~> 1.0"
