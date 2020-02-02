@@ -63,9 +63,13 @@ end
 helpers do
   # show localized date
   def local_datetime(datestring)
-    dt = DateTime.parse(datestring)
-    offset = config[:timezone_offset] || '+0900'
-    dt.new_offset(offset).strftime("%Y年%m月%d日")
+    begin
+      dt = DateTime.parse(datestring)
+      offset = config[:timezone_offset] || '+0900'
+      dt.new_offset(offset).strftime("%Y年%m月%d日")
+    rescue
+      'N/A'
+    end
   end
   # return event time of start and end
   def event_time_from_to(event)
