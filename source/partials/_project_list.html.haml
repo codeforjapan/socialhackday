@@ -1,4 +1,6 @@
 - pindex = 1
+- max ||= 100
+- more ||= false
 / Our Recent Projects
 %section#projects.g-py-100
   .container
@@ -6,75 +8,76 @@
       .u-heading-v2-3--bottom.g-brd-primary.g-mb-20
         %h2.h4.u-heading-v2__title.g-color-gray-dark-v2.g-font-weight-600.text-uppercase 進行中プロジェクト
       %p.g-font-size-16 ソーシャルハックデーに持ち込まれ、開発が進んでいるプロジェクト達です。興味があるプロジェクトがあったら是非プロジェクトページを訪れてください
-    - data.projects.each_slice(3) do |group|
+    - data.projects.select{|item| item.status == 'Active'}.sort_by{|x| x.last_update}.reverse.slice(0,max).each_slice(3) do |group|
       .row
         - group.each do |p|
-          - if p.status == 'Active'
-            .col-lg-4.g-mb-30
-              / Article
-              %article.g-brd-around.g-brd-gray-light-v4.g-brd-top-2.g-brd-primary-top.rounded.g-pa-25
-                .u-heading-v2-6--bottom.g-mb-20
-                  %h2.h3.u-heading-v2__title.g-font-weight-300.g-mb-0
-                    %a.u-link-v5.g-color-main.g-color-primary--hover{:href => "#modal#{pindex}", "data-modal-target"=>"#modal#{pindex}", "data-modal-effect"=>"fadein"} #{simple_format_with_span(p.project_name)}
-                - unless p.cover_image_url.blank?
-                  %img.g-pb-10.g-fullwidth{:src=>"#{strip_tags(p.cover_image_url)}"}
-                .g-font-size-16
-                  %p #{simple_format_with_span(p.purpose)}
-                %hr.g-mt-50.g-mb-20/
-                %ul.u-list-inline.font-italic.g-font-size-12
-                  %li.list-inline-item
-                    By: #{simple_format_with_span(p.team_name)}
-                  %li.list-inline-item /
-                  %li.list-inline-item
-                    Last update #{local_datetime(p.last_update)}
-              - pindex += 1
-            / End Article
+          .col-lg-4.g-mb-30
+            / Article
+            %article.g-brd-around.g-brd-gray-light-v4.g-brd-top-2.g-brd-primary-top.rounded.g-pa-25
+              .u-heading-v2-6--bottom.g-mb-20
+                %h2.h3.u-heading-v2__title.g-font-weight-300.g-mb-0
+                  %a.u-link-v5.g-color-main.g-color-primary--hover{:href => "#modal#{pindex}", "data-modal-target"=>"#modal#{pindex}", "data-modal-effect"=>"fadein"} #{simple_format_with_span(p.project_name)}
+              - unless p.cover_image_url.blank?
+                %img.g-pb-10.g-fullwidth{:src=>"#{strip_tags(p.cover_image_url)}"}
+              .g-font-size-16
+                %p #{simple_format_with_span(p.purpose)}
+              %hr.g-mt-50.g-mb-20/
+              %ul.u-list-inline.font-italic.g-font-size-12
+                %li.list-inline-item
+                  By: #{simple_format_with_span(p.team_name)}
+                %li.list-inline-item /
+                %li.list-inline-item
+                  Last update #{local_datetime(p.last_update)}
+            - pindex += 1
+          / End Article
+    - if more
+      .row.text-right
+        %a{:href => 'projects.html' } 全てのプロジェクトを見る
 - pindex = 1
-- data.projects.each do |p|
-  - if p.status == 'Active'
-    .text-left.g-max-width-645.g-bg-white.g-overflow-y-auto.g-pa-20.g-max-height-70vh{:style => "display: none;", :id => "modal#{pindex}"}
-      .project_header
-        %button.close{:onclick => "Custombox.modal.close();", :type => "button"}
-          %i.hs-icon.hs-icon-close
-        .u-heading-v2-3--bottom.g-brd-primary.g-mb-20
-          %h4.h4.u-heading-v2__title.g-color-gray-dark-v2.g-font-weight-600 #{simple_format_with_span(p.project_name)}
-      .project_image
-        - unless p.cover_image_url.blank?
-          %img.g-pb-10.g-fullwidth{:src=>"#{strip_tags(p.cover_image_url)}"}
-      %dl.row.project_purpose
-        %dt.col-sm-3.g-bd-bottom プロジェクトの目的
-        %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.purpose)}
-      %dl.row.project_currentstatus
-        %dt.col-sm-3.g-bd-bottom 現状
-        %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.current_status)}
-      %dl.row.project_future_situation
-        %dt.col-sm-3.g-bd-bottom 課題や目指す姿
-        %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.future_situation)}
-      %dl.row.project_future_works
-        %dt.col-sm-3.g-bd-bottom 今後の作業
-        %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.future_works)}
-      %dl.row.project_help_wanted
-        %dt.col-sm-3.g-bd-bottom 必要なヘルプ
-        %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.help_wanted)}
-      %dl.row.project_page
-        %dt.col-sm-3.g-bd-bottom プロジェクトページ
-        %dt.col-sm-9.g-font-weight-300
-          %a{:href=>"#{strip_tags(p.project_page)}"} #{strip_tags(p.project_page)}
-      %dl.row.team_name
-        %dt.col-sm-3.g-bd-bottom チーム名
-        %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.team_name)}
-      %dl.row.project_leader
-        %dt.col-sm-3.g-bd-bottom リーダー
-        %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.leader)}
-      %dl.row.project_members
-        %dt.col-sm-3.g-bd-bottom メンバー
-        %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.members)}
-      %dl.row.project_how_to_join
-        %dt.col-sm-3.g-bd-bottom 参加方法
-        %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.how_to_join)}
-      %dl.row.last_update
-        %dt.col-sm-3.g-bd-bottom 最終更新日
-        %dt.col-sm-9.g-font-weight-300 #{local_datetime(p.last_update)}
-    - pindex += 1
+- data.projects.select{|item| item.status == 'Active'}.sort_by{|x| x.last_update}.reverse.each do |p|
+  .text-left.g-max-width-645.g-bg-white.g-overflow-y-auto.g-pa-20.g-max-height-70vh{:style => "display: none;", :id => "modal#{pindex}"}
+    .project_header
+      %button.close{:onclick => "Custombox.modal.close();", :type => "button"}
+        %i.hs-icon.hs-icon-close
+      .u-heading-v2-3--bottom.g-brd-primary.g-mb-20
+        %h4.h4.u-heading-v2__title.g-color-gray-dark-v2.g-font-weight-600 #{simple_format_with_span(p.project_name)}
+    .project_image
+      - unless p.cover_image_url.blank?
+        %img.g-pb-10.g-fullwidth{:src=>"#{strip_tags(p.cover_image_url)}"}
+    %dl.row.project_purpose
+      %dt.col-sm-3.g-bd-bottom プロジェクトの目的
+      %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.purpose)}
+    %dl.row.project_currentstatus
+      %dt.col-sm-3.g-bd-bottom 現状
+      %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.current_status)}
+    %dl.row.project_future_situation
+      %dt.col-sm-3.g-bd-bottom 課題や目指す姿
+      %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.future_situation)}
+    %dl.row.project_future_works
+      %dt.col-sm-3.g-bd-bottom 今後の作業
+      %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.future_works)}
+    %dl.row.project_help_wanted
+      %dt.col-sm-3.g-bd-bottom 必要なヘルプ
+      %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.help_wanted)}
+    %dl.row.project_page
+      %dt.col-sm-3.g-bd-bottom プロジェクトページ
+      %dt.col-sm-9.g-font-weight-300
+        %a{:href=>"#{strip_tags(p.project_page)}"} #{strip_tags(p.project_page)}
+    %dl.row.team_name
+      %dt.col-sm-3.g-bd-bottom チーム名
+      %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.team_name)}
+    %dl.row.project_leader
+      %dt.col-sm-3.g-bd-bottom リーダー
+      %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.leader)}
+    %dl.row.project_members
+      %dt.col-sm-3.g-bd-bottom メンバー
+      %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.members)}
+    %dl.row.project_how_to_join
+      %dt.col-sm-3.g-bd-bottom 参加方法
+      %dt.col-sm-9.g-font-weight-300 #{simple_format_with_span(p.how_to_join)}
+    %dl.row.last_update
+      %dt.col-sm-3.g-bd-bottom 最終更新日
+      %dt.col-sm-9.g-font-weight-300 #{local_datetime(p.last_update)}
+  - pindex += 1
 
 / End Our Recent Projects
