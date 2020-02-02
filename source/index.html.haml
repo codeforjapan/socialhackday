@@ -157,7 +157,7 @@ title: Top
 
 %hr.g-brd-gray-light-v4.my-0/
 
-= partial "partials/project_list"
+= partial "partials/project_list", :locals => {:max => 6, :more => true}
 
 - statistics = get_statistics(data.events)
 / Counters
