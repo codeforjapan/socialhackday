@@ -38,7 +38,6 @@ var
   },
 
   autoprefixerOpts = {
-    browsers: ['last 3 versions', '> 5%']
   },
 
   js = {
