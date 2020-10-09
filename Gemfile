@@ -45,5 +45,5 @@ group :development do
 end
 
 # deployment
-gem 'middleman-s3_sync', '~> 4.0.1.rc.3'
-gem 'mime-types', '~> 3.0.0'
+gem 'middleman-s3_sync', '~> 4.0.3'
+gem 'mime-types', '~> 3.3.0'
