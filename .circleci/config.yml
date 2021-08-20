@@ -43,6 +43,9 @@ jobs:
             npm install
             sudo apt-get install python-pip python-dev build-essential
             sudo pip install awscli --upgrade
+      - run:
+          name: rebuild cache
+          command: npm rebuild node-sass
 
       - save_cache:
           paths:
