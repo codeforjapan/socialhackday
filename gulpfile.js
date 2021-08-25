@@ -4,9 +4,11 @@
 
 // 1. LOAD PLUGINS
 
-var gulp = require('gulp');
-var bourbon = require('bourbon').includePaths;
-var neat = require('bourbon-neat').includePaths;
+const gulp = require('gulp');
+const bourbon = require('bourbon').includePaths;
+const neat = require('bourbon-neat').includePaths;
+const sass = require('gulp-sass')(require('node-sass'));
+
 var p = require('gulp-load-plugins')({ // This loads all the other plugins.
   DEBUG: false,
   pattern: ['gulp-*', 'gulp.*', 'del', 'run-*', 'browser*', 'vinyl-*'],
@@ -66,37 +68,41 @@ var
 // 3. WORKER TASKS
 
 // CSS Preprocessing
-gulp.task('css', function() {
-  return gulp.src(css.in)
+gulp.task('css', (cb) => {
+  gulp.src(css.in)
     .pipe(development(p.sourcemaps.init()))
-    .pipe(p.sass(sassOpts).on('error', p.sass.logError))
+    .pipe(sass(sassOpts).on('error', sass.logError))
     .pipe(p.autoprefixer(autoprefixerOpts)).on('error', handleError)
     .pipe(production(p.cleanCss()))
     .pipe(development(p.sourcemaps.write()))
     .pipe(gulp.dest(css.out));
+  cb();
 });
 
 // Javascript Bundling
-gulp.task('js', function() {
+gulp.task('js', (cb) => {
   var b = p.browserify({
     entries: src + 'assets/javascripts/all.js',
     debug: true
   });
 
-  return b.bundle().on('error', handleError)
+  b.bundle().on('error', handleError)
     .pipe(p.source('bundle.js'))
     .pipe(production() ? p.buffer() : p.gutil.noop())
     .pipe(production(p.stripDebug()))
     .pipe(production() ? p.uglify(uglifyOpts) : p.gutil.noop())
     .pipe(gulp.dest(js.out));
+  cb();
 });
 
 // Image Optimization
-gulp.task('images', function() {
-  return gulp.src(images.in)
+gulp.task('images', (cb) => {
+  console.log('images');
+  gulp.src(images.in)
     .pipe(p.changed(images.out))
     .pipe(p.imagemin())
     .pipe(gulp.dest(images.out));
+  cb();
 });
 
 // Clean .tmp/
@@ -108,34 +114,34 @@ gulp.task('clean', function(done) {
 });
 
 // Asset Size Report
-gulp.task('sizereport', function () {
-  return gulp.src(dest + '**/*')
+gulp.task('sizereport', (cb) => {
+  gulp.src(dest + '**/*')
     .pipe(p.sizereport({
       gzip: true
     }));
+  cb();
 });
 
 // 4. SUPER TASKS
 
 // Development Task
 gulp.task('development', gulp.series(
-  'clean', 'css', 'js', 'images'
+  'clean', 'images', 'css', 'js'
 ));
 
 // Production Task
-gulp.task('production', gulp.series('clean', 'css', 'js', 'images', 'sizereport'));
+gulp.task('production', gulp.series('clean', 'images', 'css', 'js', 'sizereport'));
 
 // Default Task
 // This is the task that will be invoked by Middleman's exteranal pipeline when
 // running 'middleman server'
-gulp.task('default', gulp.series('development', function() {
+gulp.task('default', gulp.series('development', () => {
 
   p.browserSync.init(serverOpts);
 
+  gulp.watch(images.in, gulp.task('images'));
   gulp.watch(css.in, gulp.task('css'));
   gulp.watch(js.in, gulp.task('js'));
-  gulp.watch(images.in, gulp.task('images'));
-
 }));
 
 function handleError(err) {
