@@ -58,6 +58,7 @@ jobs:
       - run:
           name: build phase
           command: |
+            sudo ln -s /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 /usr/lib/x86_64-linux-gnu/libffi.so.6
             bundle exec middleman build --environment="production" --build-dir=public --clean
 
       # Clear Cloudfront save_cache
