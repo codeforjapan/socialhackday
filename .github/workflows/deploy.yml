@@ -2,7 +2,7 @@ name: Deploy Middleman to GH Pages
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron: "0 1 * * *"
@@ -62,3 +62,12 @@ jobs:
           AWS_REGION: "us-east-1"
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Notify deployment
+        uses: 8398a7/action-slack@v3.8.0
+        with:
+          status: ${{ job.status }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
