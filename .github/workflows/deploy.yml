@@ -49,7 +49,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           bundle exec middleman build --environment="production" --build-dir=public --clean
-          aws s3 sync --sse --delete public s3://${{ secrets.AWS_BUCKET }}/
+          aws s3 sync  --region ap-northeast-1 --sse --delete public s3://${{ secrets.AWS_BUCKET }}/
 
       # Invalidate Cloudfront
       - name: invalidate
