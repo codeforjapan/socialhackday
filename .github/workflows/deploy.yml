@@ -15,7 +15,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.0.1"
+          ruby-version: "2.6.8"
 
       - name: Ruby gem cache
         uses: actions/cache@v2
