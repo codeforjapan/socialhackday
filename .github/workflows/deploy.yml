@@ -41,7 +41,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install packages
-        run: npm install
+        run: npm install --unsafe-perm
 
       - name: Build Middleman
         env:
